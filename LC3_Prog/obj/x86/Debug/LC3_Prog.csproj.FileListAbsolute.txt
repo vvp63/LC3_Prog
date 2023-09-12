@@ -1,0 +1,17 @@
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\bin\Debug\LC3_Prog.exe.config
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\bin\Debug\LC3_Prog.exe
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\bin\Debug\LC3_Prog.pdb
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.Properties.Resources.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.csproj.GenerateResource.Cache
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.exe
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.pdb
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.Form_Main.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_AddUpdDel.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_RL_AddDElUpd.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_ClLimitEdit.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_CheckResults.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_RepoDeals.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_AU_List.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_ModelDeal.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.F_SL_5Percent.resources
+D:\Poliektov\LC3\LC3_Prog\LC3_Prog\obj\x86\Debug\LC3_Prog.csprojResolveAssemblyReference.cache

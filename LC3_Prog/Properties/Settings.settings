@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LC3_Prog.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LC3_devConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=CO1-VP-LC1;Initial Catalog=LC3_dev;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=CO1-VP-LC1;Initial Catalog=LC3_dev;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="AUBonds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="AUStocks" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">157</Value>
+    </Setting>
+    <Setting Name="AUTemplate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">J;K;L;M;N;R</Value>
+    </Setting>
+    <Setting Name="AUSheet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Общий лист</Value>
+    </Setting>
+    <Setting Name="PortfolioState" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

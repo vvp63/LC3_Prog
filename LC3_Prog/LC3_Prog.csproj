@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{144B9687-C386-4826-A42E-3188E0B3A6C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LC3_Prog</RootNamespace>
+    <AssemblyName>LC3_Prog</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1_Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1_Limits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1_RL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AddUpdDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AddUpdDel.Designer.cs">
+      <DependentUpon>F_AddUpdDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AU_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AU_List.Designer.cs">
+      <DependentUpon>F_AU_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CheckResults.Designer.cs">
+      <DependentUpon>F_CheckResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ClLimitEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ClLimitEdit.Designer.cs">
+      <DependentUpon>F_ClLimitEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Groups.Designer.cs">
+      <DependentUpon>F_Groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1_Portfolio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ModelDeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ModelDeal.Designer.cs">
+      <DependentUpon>F_ModelDeal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_RepoDeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_RepoDeals.Designer.cs">
+      <DependentUpon>F_RepoDeals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_RL_AddDElUpd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_RL_AddDElUpd.Designer.cs">
+      <DependentUpon>F_RL_AddDElUpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_SL_5Percent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_SL_5Percent.Designer.cs">
+      <DependentUpon>F_SL_5Percent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LC3_devDataSet.cs">
+      <DependentUpon>LC3_devDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LC3_devDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LC3_devDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LC3_devDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LC3_devDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ParamForm.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AddUpdDel.resx">
+      <DependentUpon>F_AddUpdDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AU_List.resx">
+      <DependentUpon>F_AU_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_CheckResults.resx">
+      <DependentUpon>F_CheckResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ClLimitEdit.resx">
+      <DependentUpon>F_ClLimitEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ModelDeal.resx">
+      <DependentUpon>F_ModelDeal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_RepoDeals.resx">
+      <DependentUpon>F_RepoDeals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_RL_AddDElUpd.resx">
+      <DependentUpon>F_RL_AddDElUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_SL_5Percent.resx">
+      <DependentUpon>F_SL_5Percent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="LC3_devDataSet.xsc">
+      <DependentUpon>LC3_devDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LC3_devDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LC3_devDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LC3_devDataSet.xss">
+      <DependentUpon>LC3_devDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LC3_devDataSet1.xsc">
+      <DependentUpon>LC3_devDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LC3_devDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LC3_devDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LC3_devDataSet1.xss">
+      <DependentUpon>LC3_devDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\chek_all.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
