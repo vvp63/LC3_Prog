@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lC3_devDataSet = new LC3_Prog.LC3_devDataSet();
             this.tbLog = new System.Windows.Forms.TextBox();
@@ -104,6 +104,60 @@
             this.b_add = new System.Windows.Forms.Button();
             this.tp_Portfolio = new System.Windows.Forms.TabPage();
             this.dgv_FTView = new System.Windows.Forms.DataGridView();
+            this.clientCodeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instrumentNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issuerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientAccountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summAssetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instrumentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marketValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instrumentTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instrumentSubtypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secTypeBrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quoteSheetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bondsIssueSummDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quoteSDHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quoteSDHAgoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.volCirculationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contridDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capitalizationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.redemptionDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.securityIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issueNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.announcedVolDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartPlacingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEndPlacingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cBCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDCBSDHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateRegNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthAvgVolDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrFRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrMRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrSPRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrERatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrARatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enddateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isInIndexDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isVariableCouponDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isQuantityGrowsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isbankDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.forqualinvestorsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isSubordinatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fTViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bt_Model_Deal = new System.Windows.Forms.Button();
             this.bt_Portf_Model = new System.Windows.Forms.Button();
@@ -114,9 +168,9 @@
             this.l_client2 = new System.Windows.Forms.Label();
             this.cb_PortfClient = new System.Windows.Forms.ComboBox();
             this.cLClientsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bt_ReloadPortf = new System.Windows.Forms.Button();
             this.cms_Portf = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.factTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bt_ReloadPortf = new System.Windows.Forms.Button();
             this.tp_Restrictions = new System.Windows.Forms.TabPage();
             this.btSL5Perc = new System.Windows.Forms.Button();
             this.cb_Model = new System.Windows.Forms.CheckBox();
@@ -215,60 +269,6 @@
             this.lC3_devDataSet1 = new LC3_Prog.LC3_devDataSet1();
             this.factTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fT_ViewTableAdapter = new LC3_Prog.LC3_devDataSetTableAdapters.FT_ViewTableAdapter();
-            this.clientCodeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instrumentNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issuerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientAccountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summAssetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instrumentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marketValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.percentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instrumentTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instrumentSubtypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secTypeBrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteSheetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bondsIssueSummDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteSDHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteSDHAgoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.volCirculationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contridDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capitalizationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.redemptionDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.securityIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issueNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.announcedVolDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartPlacingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEndPlacingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cBCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDCBSDHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateRegNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthAvgVolDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrFRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrMRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrSPRatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrERatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrARatingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enddateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isInIndexDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isVariableCouponDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isQuantityGrowsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isbankDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.forqualinvestorsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isSubordinatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lC3_devDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLObjectsBindingSource)).BeginInit();
@@ -1048,6 +1048,345 @@
             this.dgv_FTView.Size = new System.Drawing.Size(1449, 847);
             this.dgv_FTView.TabIndex = 17;
             // 
+            // clientCodeDataGridViewTextBoxColumn2
+            // 
+            this.clientCodeDataGridViewTextBoxColumn2.DataPropertyName = "ClientCode";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.clientCodeDataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clientCodeDataGridViewTextBoxColumn2.Frozen = true;
+            this.clientCodeDataGridViewTextBoxColumn2.HeaderText = "Клиент";
+            this.clientCodeDataGridViewTextBoxColumn2.Name = "clientCodeDataGridViewTextBoxColumn2";
+            this.clientCodeDataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // instrumentNameDataGridViewTextBoxColumn1
+            // 
+            this.instrumentNameDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentName";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.instrumentNameDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.instrumentNameDataGridViewTextBoxColumn1.Frozen = true;
+            this.instrumentNameDataGridViewTextBoxColumn1.HeaderText = "Инструмент";
+            this.instrumentNameDataGridViewTextBoxColumn1.Name = "instrumentNameDataGridViewTextBoxColumn1";
+            this.instrumentNameDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // issuerDataGridViewTextBoxColumn1
+            // 
+            this.issuerDataGridViewTextBoxColumn1.DataPropertyName = "Issuer";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.issuerDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.issuerDataGridViewTextBoxColumn1.Frozen = true;
+            this.issuerDataGridViewTextBoxColumn1.HeaderText = "Эмитент";
+            this.issuerDataGridViewTextBoxColumn1.Name = "issuerDataGridViewTextBoxColumn1";
+            this.issuerDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // clientAccountDataGridViewTextBoxColumn1
+            // 
+            this.clientAccountDataGridViewTextBoxColumn1.DataPropertyName = "ClientAccount";
+            this.clientAccountDataGridViewTextBoxColumn1.HeaderText = "Счет";
+            this.clientAccountDataGridViewTextBoxColumn1.Name = "clientAccountDataGridViewTextBoxColumn1";
+            // 
+            // summAssetDataGridViewTextBoxColumn1
+            // 
+            this.summAssetDataGridViewTextBoxColumn1.DataPropertyName = "SummAsset";
+            this.summAssetDataGridViewTextBoxColumn1.HeaderText = "СЧА";
+            this.summAssetDataGridViewTextBoxColumn1.Name = "summAssetDataGridViewTextBoxColumn1";
+            // 
+            // instrumentDataGridViewTextBoxColumn1
+            // 
+            this.instrumentDataGridViewTextBoxColumn1.DataPropertyName = "Instrument";
+            this.instrumentDataGridViewTextBoxColumn1.HeaderText = "Код";
+            this.instrumentDataGridViewTextBoxColumn1.Name = "instrumentDataGridViewTextBoxColumn1";
+            // 
+            // quantityDataGridViewTextBoxColumn1
+            // 
+            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Количество";
+            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
+            // 
+            // marketValueDataGridViewTextBoxColumn1
+            // 
+            this.marketValueDataGridViewTextBoxColumn1.DataPropertyName = "MarketValue";
+            this.marketValueDataGridViewTextBoxColumn1.HeaderText = "Оценка";
+            this.marketValueDataGridViewTextBoxColumn1.Name = "marketValueDataGridViewTextBoxColumn1";
+            // 
+            // percentDataGridViewTextBoxColumn
+            // 
+            this.percentDataGridViewTextBoxColumn.DataPropertyName = "Percent";
+            this.percentDataGridViewTextBoxColumn.HeaderText = "% СЧА";
+            this.percentDataGridViewTextBoxColumn.Name = "percentDataGridViewTextBoxColumn";
+            // 
+            // instrumentTypeDataGridViewTextBoxColumn1
+            // 
+            this.instrumentTypeDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentType";
+            this.instrumentTypeDataGridViewTextBoxColumn1.HeaderText = "Тип";
+            this.instrumentTypeDataGridViewTextBoxColumn1.Name = "instrumentTypeDataGridViewTextBoxColumn1";
+            // 
+            // instrumentSubtypeDataGridViewTextBoxColumn1
+            // 
+            this.instrumentSubtypeDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentSubtype";
+            this.instrumentSubtypeDataGridViewTextBoxColumn1.HeaderText = "Подтип";
+            this.instrumentSubtypeDataGridViewTextBoxColumn1.Name = "instrumentSubtypeDataGridViewTextBoxColumn1";
+            // 
+            // secTypeBrDataGridViewTextBoxColumn
+            // 
+            this.secTypeBrDataGridViewTextBoxColumn.DataPropertyName = "SecTypeBr";
+            this.secTypeBrDataGridViewTextBoxColumn.HeaderText = "SecTypeBr";
+            this.secTypeBrDataGridViewTextBoxColumn.Name = "secTypeBrDataGridViewTextBoxColumn";
+            // 
+            // countryDataGridViewTextBoxColumn1
+            // 
+            this.countryDataGridViewTextBoxColumn1.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn1.HeaderText = "Страна";
+            this.countryDataGridViewTextBoxColumn1.Name = "countryDataGridViewTextBoxColumn1";
+            // 
+            // quoteSheetDataGridViewTextBoxColumn1
+            // 
+            this.quoteSheetDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSheet";
+            this.quoteSheetDataGridViewTextBoxColumn1.HeaderText = "Кот. лист";
+            this.quoteSheetDataGridViewTextBoxColumn1.Name = "quoteSheetDataGridViewTextBoxColumn1";
+            // 
+            // ownTypeDataGridViewTextBoxColumn1
+            // 
+            this.ownTypeDataGridViewTextBoxColumn1.DataPropertyName = "OwnType";
+            this.ownTypeDataGridViewTextBoxColumn1.HeaderText = "Тип собственности";
+            this.ownTypeDataGridViewTextBoxColumn1.Name = "ownTypeDataGridViewTextBoxColumn1";
+            // 
+            // bondsIssueSummDataGridViewTextBoxColumn1
+            // 
+            this.bondsIssueSummDataGridViewTextBoxColumn1.DataPropertyName = "BondsIssueSumm";
+            this.bondsIssueSummDataGridViewTextBoxColumn1.HeaderText = "Сумм. объем выпуска";
+            this.bondsIssueSummDataGridViewTextBoxColumn1.Name = "bondsIssueSummDataGridViewTextBoxColumn1";
+            // 
+            // quoteSDHDataGridViewTextBoxColumn1
+            // 
+            this.quoteSDHDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSDH";
+            this.quoteSDHDataGridViewTextBoxColumn1.HeaderText = "Котировка ЦХПИ";
+            this.quoteSDHDataGridViewTextBoxColumn1.Name = "quoteSDHDataGridViewTextBoxColumn1";
+            // 
+            // quoteSDHAgoDataGridViewTextBoxColumn1
+            // 
+            this.quoteSDHAgoDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSDHAgo";
+            this.quoteSDHAgoDataGridViewTextBoxColumn1.HeaderText = "Возраст котировки ЦХПИ";
+            this.quoteSDHAgoDataGridViewTextBoxColumn1.Name = "quoteSDHAgoDataGridViewTextBoxColumn1";
+            this.quoteSDHAgoDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // volCirculationDataGridViewTextBoxColumn1
+            // 
+            this.volCirculationDataGridViewTextBoxColumn1.DataPropertyName = "VolCirculation";
+            this.volCirculationDataGridViewTextBoxColumn1.HeaderText = "Объем в обращении";
+            this.volCirculationDataGridViewTextBoxColumn1.Name = "volCirculationDataGridViewTextBoxColumn1";
+            // 
+            // contridDataGridViewTextBoxColumn2
+            // 
+            this.contridDataGridViewTextBoxColumn2.DataPropertyName = "contrid";
+            this.contridDataGridViewTextBoxColumn2.HeaderText = "contrid";
+            this.contridDataGridViewTextBoxColumn2.Name = "contridDataGridViewTextBoxColumn2";
+            // 
+            // capitalizationDataGridViewTextBoxColumn1
+            // 
+            this.capitalizationDataGridViewTextBoxColumn1.DataPropertyName = "Capitalization";
+            this.capitalizationDataGridViewTextBoxColumn1.HeaderText = "Капитализация";
+            this.capitalizationDataGridViewTextBoxColumn1.Name = "capitalizationDataGridViewTextBoxColumn1";
+            this.capitalizationDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // redemptionDateDataGridViewTextBoxColumn1
+            // 
+            this.redemptionDateDataGridViewTextBoxColumn1.DataPropertyName = "RedemptionDate";
+            this.redemptionDateDataGridViewTextBoxColumn1.HeaderText = "Дата погашения";
+            this.redemptionDateDataGridViewTextBoxColumn1.Name = "redemptionDateDataGridViewTextBoxColumn1";
+            // 
+            // securityIdDataGridViewTextBoxColumn1
+            // 
+            this.securityIdDataGridViewTextBoxColumn1.DataPropertyName = "SecurityId";
+            this.securityIdDataGridViewTextBoxColumn1.HeaderText = "SecurityId";
+            this.securityIdDataGridViewTextBoxColumn1.Name = "securityIdDataGridViewTextBoxColumn1";
+            // 
+            // issueNumDataGridViewTextBoxColumn1
+            // 
+            this.issueNumDataGridViewTextBoxColumn1.DataPropertyName = "IssueNum";
+            this.issueNumDataGridViewTextBoxColumn1.HeaderText = "Номер выпуска";
+            this.issueNumDataGridViewTextBoxColumn1.Name = "issueNumDataGridViewTextBoxColumn1";
+            // 
+            // announcedVolDataGridViewTextBoxColumn1
+            // 
+            this.announcedVolDataGridViewTextBoxColumn1.DataPropertyName = "AnnouncedVol";
+            this.announcedVolDataGridViewTextBoxColumn1.HeaderText = "Объем выпуска";
+            this.announcedVolDataGridViewTextBoxColumn1.Name = "announcedVolDataGridViewTextBoxColumn1";
+            // 
+            // dateStartPlacingDataGridViewTextBoxColumn1
+            // 
+            this.dateStartPlacingDataGridViewTextBoxColumn1.DataPropertyName = "DateStartPlacing";
+            this.dateStartPlacingDataGridViewTextBoxColumn1.HeaderText = "Дата начала размещения";
+            this.dateStartPlacingDataGridViewTextBoxColumn1.Name = "dateStartPlacingDataGridViewTextBoxColumn1";
+            // 
+            // dateEndPlacingDataGridViewTextBoxColumn1
+            // 
+            this.dateEndPlacingDataGridViewTextBoxColumn1.DataPropertyName = "DateEndPlacing";
+            this.dateEndPlacingDataGridViewTextBoxColumn1.HeaderText = "Дата окончания размещения";
+            this.dateEndPlacingDataGridViewTextBoxColumn1.Name = "dateEndPlacingDataGridViewTextBoxColumn1";
+            // 
+            // currencyDataGridViewTextBoxColumn1
+            // 
+            this.currencyDataGridViewTextBoxColumn1.DataPropertyName = "Currency";
+            this.currencyDataGridViewTextBoxColumn1.HeaderText = "Валюта";
+            this.currencyDataGridViewTextBoxColumn1.Name = "currencyDataGridViewTextBoxColumn1";
+            // 
+            // cBCodeDataGridViewTextBoxColumn1
+            // 
+            this.cBCodeDataGridViewTextBoxColumn1.DataPropertyName = "CB_Code";
+            this.cBCodeDataGridViewTextBoxColumn1.HeaderText = "CB_Code";
+            this.cBCodeDataGridViewTextBoxColumn1.Name = "cBCodeDataGridViewTextBoxColumn1";
+            // 
+            // iDCBSDHDataGridViewTextBoxColumn1
+            // 
+            this.iDCBSDHDataGridViewTextBoxColumn1.DataPropertyName = "ID_CB_SDH";
+            this.iDCBSDHDataGridViewTextBoxColumn1.HeaderText = "ID_CB_SDH";
+            this.iDCBSDHDataGridViewTextBoxColumn1.Name = "iDCBSDHDataGridViewTextBoxColumn1";
+            // 
+            // stateRegNumDataGridViewTextBoxColumn1
+            // 
+            this.stateRegNumDataGridViewTextBoxColumn1.DataPropertyName = "StateRegNum";
+            this.stateRegNumDataGridViewTextBoxColumn1.HeaderText = "ГРН";
+            this.stateRegNumDataGridViewTextBoxColumn1.Name = "stateRegNumDataGridViewTextBoxColumn1";
+            // 
+            // monthAvgVolDataGridViewTextBoxColumn1
+            // 
+            this.monthAvgVolDataGridViewTextBoxColumn1.DataPropertyName = "MonthAvgVol";
+            this.monthAvgVolDataGridViewTextBoxColumn1.HeaderText = "Среднемесячный объем";
+            this.monthAvgVolDataGridViewTextBoxColumn1.Name = "monthAvgVolDataGridViewTextBoxColumn1";
+            // 
+            // fRatingDataGridViewTextBoxColumn1
+            // 
+            this.fRatingDataGridViewTextBoxColumn1.DataPropertyName = "F_Rating";
+            this.fRatingDataGridViewTextBoxColumn1.HeaderText = "F_Rating";
+            this.fRatingDataGridViewTextBoxColumn1.Name = "fRatingDataGridViewTextBoxColumn1";
+            // 
+            // mRatingDataGridViewTextBoxColumn1
+            // 
+            this.mRatingDataGridViewTextBoxColumn1.DataPropertyName = "M_Rating";
+            this.mRatingDataGridViewTextBoxColumn1.HeaderText = "M_Rating";
+            this.mRatingDataGridViewTextBoxColumn1.Name = "mRatingDataGridViewTextBoxColumn1";
+            // 
+            // sPRatingDataGridViewTextBoxColumn1
+            // 
+            this.sPRatingDataGridViewTextBoxColumn1.DataPropertyName = "SP_Rating";
+            this.sPRatingDataGridViewTextBoxColumn1.HeaderText = "SP_Rating";
+            this.sPRatingDataGridViewTextBoxColumn1.Name = "sPRatingDataGridViewTextBoxColumn1";
+            // 
+            // eRatingDataGridViewTextBoxColumn1
+            // 
+            this.eRatingDataGridViewTextBoxColumn1.DataPropertyName = "E_Rating";
+            this.eRatingDataGridViewTextBoxColumn1.HeaderText = "E_Rating";
+            this.eRatingDataGridViewTextBoxColumn1.Name = "eRatingDataGridViewTextBoxColumn1";
+            // 
+            // aRatingDataGridViewTextBoxColumn1
+            // 
+            this.aRatingDataGridViewTextBoxColumn1.DataPropertyName = "A_Rating";
+            this.aRatingDataGridViewTextBoxColumn1.HeaderText = "A_Rating";
+            this.aRatingDataGridViewTextBoxColumn1.Name = "aRatingDataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NKR_Rating";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NKR_Rating";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NRA_Rating";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NRA_Rating";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // contrFRatingDataGridViewTextBoxColumn1
+            // 
+            this.contrFRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_F_Rating";
+            this.contrFRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_F_Rating";
+            this.contrFRatingDataGridViewTextBoxColumn1.Name = "contrFRatingDataGridViewTextBoxColumn1";
+            // 
+            // contrMRatingDataGridViewTextBoxColumn1
+            // 
+            this.contrMRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_M_Rating";
+            this.contrMRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_M_Rating";
+            this.contrMRatingDataGridViewTextBoxColumn1.Name = "contrMRatingDataGridViewTextBoxColumn1";
+            // 
+            // contrSPRatingDataGridViewTextBoxColumn1
+            // 
+            this.contrSPRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_SP_Rating";
+            this.contrSPRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_SP_Rating";
+            this.contrSPRatingDataGridViewTextBoxColumn1.Name = "contrSPRatingDataGridViewTextBoxColumn1";
+            // 
+            // contrERatingDataGridViewTextBoxColumn1
+            // 
+            this.contrERatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_E_Rating";
+            this.contrERatingDataGridViewTextBoxColumn1.HeaderText = "Contr_E_Rating";
+            this.contrERatingDataGridViewTextBoxColumn1.Name = "contrERatingDataGridViewTextBoxColumn1";
+            // 
+            // contrARatingDataGridViewTextBoxColumn1
+            // 
+            this.contrARatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_A_Rating";
+            this.contrARatingDataGridViewTextBoxColumn1.HeaderText = "Contr_A_Rating";
+            this.contrARatingDataGridViewTextBoxColumn1.Name = "contrARatingDataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Contr_NKR_Rating";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Contr_NKR_Rating";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contr_NRA_Rating";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Contr_NRA_Rating";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // enddateDataGridViewTextBoxColumn1
+            // 
+            this.enddateDataGridViewTextBoxColumn1.DataPropertyName = "enddate";
+            this.enddateDataGridViewTextBoxColumn1.HeaderText = "Дата окончания";
+            this.enddateDataGridViewTextBoxColumn1.Name = "enddateDataGridViewTextBoxColumn1";
+            // 
+            // isInIndexDataGridViewCheckBoxColumn1
+            // 
+            this.isInIndexDataGridViewCheckBoxColumn1.DataPropertyName = "IsInIndex";
+            this.isInIndexDataGridViewCheckBoxColumn1.HeaderText = "В индексе";
+            this.isInIndexDataGridViewCheckBoxColumn1.Name = "isInIndexDataGridViewCheckBoxColumn1";
+            // 
+            // isVariableCouponDataGridViewCheckBoxColumn1
+            // 
+            this.isVariableCouponDataGridViewCheckBoxColumn1.DataPropertyName = "IsVariableCoupon";
+            this.isVariableCouponDataGridViewCheckBoxColumn1.HeaderText = "Переменный купон";
+            this.isVariableCouponDataGridViewCheckBoxColumn1.Name = "isVariableCouponDataGridViewCheckBoxColumn1";
+            // 
+            // isQuantityGrowsDataGridViewCheckBoxColumn
+            // 
+            this.isQuantityGrowsDataGridViewCheckBoxColumn.DataPropertyName = "IsQuantityGrows";
+            this.isQuantityGrowsDataGridViewCheckBoxColumn.HeaderText = "IsQuantityGrows";
+            this.isQuantityGrowsDataGridViewCheckBoxColumn.Name = "isQuantityGrowsDataGridViewCheckBoxColumn";
+            this.isQuantityGrowsDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DaysToRedemption";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Дней до погашения";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // isbankDataGridViewCheckBoxColumn
+            // 
+            this.isbankDataGridViewCheckBoxColumn.DataPropertyName = "is_bank";
+            this.isbankDataGridViewCheckBoxColumn.HeaderText = "Банк";
+            this.isbankDataGridViewCheckBoxColumn.Name = "isbankDataGridViewCheckBoxColumn";
+            // 
+            // forqualinvestorsDataGridViewCheckBoxColumn
+            // 
+            this.forqualinvestorsDataGridViewCheckBoxColumn.DataPropertyName = "for_qual_investors";
+            this.forqualinvestorsDataGridViewCheckBoxColumn.HeaderText = "Для квал. инвесторов";
+            this.forqualinvestorsDataGridViewCheckBoxColumn.Name = "forqualinvestorsDataGridViewCheckBoxColumn";
+            // 
+            // isSubordinatedDataGridViewTextBoxColumn
+            // 
+            this.isSubordinatedDataGridViewTextBoxColumn.DataPropertyName = "IsSubordinated";
+            this.isSubordinatedDataGridViewTextBoxColumn.HeaderText = "Субординированная";
+            this.isSubordinatedDataGridViewTextBoxColumn.Name = "isSubordinatedDataGridViewTextBoxColumn";
+            // 
             // fTViewBindingSource
             // 
             this.fTViewBindingSource.DataMember = "FT_View";
@@ -1138,18 +1477,6 @@
             this.cLClientsBindingSource3.DataMember = "_CL_Clients";
             this.cLClientsBindingSource3.DataSource = this.lC3_devDataSet;
             // 
-            // cms_Portf
-            // 
-            this.cms_Portf.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cms_Portf.Name = "cms_Portf";
-            this.cms_Portf.Size = new System.Drawing.Size(61, 4);
-            this.cms_Portf.Text = "Отображаемые колонки";
-            // 
-            // factTableBindingSource
-            // 
-            this.factTableBindingSource.DataMember = "FactTable";
-            this.factTableBindingSource.DataSource = this.lC3_devDataSet;
-            // 
             // bt_ReloadPortf
             // 
             this.bt_ReloadPortf.BackColor = System.Drawing.Color.White;
@@ -1162,6 +1489,18 @@
             this.bt_ReloadPortf.TabIndex = 0;
             this.bt_ReloadPortf.UseVisualStyleBackColor = false;
             this.bt_ReloadPortf.Click += new System.EventHandler(this.Click_Reload_Portf);
+            // 
+            // cms_Portf
+            // 
+            this.cms_Portf.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_Portf.Name = "cms_Portf";
+            this.cms_Portf.Size = new System.Drawing.Size(61, 4);
+            this.cms_Portf.Text = "Отображаемые колонки";
+            // 
+            // factTableBindingSource
+            // 
+            this.factTableBindingSource.DataMember = "FactTable";
+            this.factTableBindingSource.DataSource = this.lC3_devDataSet;
             // 
             // tp_Restrictions
             // 
@@ -1405,9 +1744,9 @@
             // 
             // CheckResult
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CheckResult.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CheckResult.DefaultCellStyle = dataGridViewCellStyle4;
             this.CheckResult.HeaderText = "";
             this.CheckResult.MinimumWidth = 40;
             this.CheckResult.Name = "CheckResult";
@@ -2155,345 +2494,6 @@
             // fT_ViewTableAdapter
             // 
             this.fT_ViewTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientCodeDataGridViewTextBoxColumn2
-            // 
-            this.clientCodeDataGridViewTextBoxColumn2.DataPropertyName = "ClientCode";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.clientCodeDataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.clientCodeDataGridViewTextBoxColumn2.Frozen = true;
-            this.clientCodeDataGridViewTextBoxColumn2.HeaderText = "Клиент";
-            this.clientCodeDataGridViewTextBoxColumn2.Name = "clientCodeDataGridViewTextBoxColumn2";
-            this.clientCodeDataGridViewTextBoxColumn2.Width = 60;
-            // 
-            // instrumentNameDataGridViewTextBoxColumn1
-            // 
-            this.instrumentNameDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentName";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.instrumentNameDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.instrumentNameDataGridViewTextBoxColumn1.Frozen = true;
-            this.instrumentNameDataGridViewTextBoxColumn1.HeaderText = "Инструмент";
-            this.instrumentNameDataGridViewTextBoxColumn1.Name = "instrumentNameDataGridViewTextBoxColumn1";
-            this.instrumentNameDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // issuerDataGridViewTextBoxColumn1
-            // 
-            this.issuerDataGridViewTextBoxColumn1.DataPropertyName = "Issuer";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.issuerDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.issuerDataGridViewTextBoxColumn1.Frozen = true;
-            this.issuerDataGridViewTextBoxColumn1.HeaderText = "Эмитент";
-            this.issuerDataGridViewTextBoxColumn1.Name = "issuerDataGridViewTextBoxColumn1";
-            this.issuerDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // clientAccountDataGridViewTextBoxColumn1
-            // 
-            this.clientAccountDataGridViewTextBoxColumn1.DataPropertyName = "ClientAccount";
-            this.clientAccountDataGridViewTextBoxColumn1.HeaderText = "Счет";
-            this.clientAccountDataGridViewTextBoxColumn1.Name = "clientAccountDataGridViewTextBoxColumn1";
-            // 
-            // summAssetDataGridViewTextBoxColumn1
-            // 
-            this.summAssetDataGridViewTextBoxColumn1.DataPropertyName = "SummAsset";
-            this.summAssetDataGridViewTextBoxColumn1.HeaderText = "СЧА";
-            this.summAssetDataGridViewTextBoxColumn1.Name = "summAssetDataGridViewTextBoxColumn1";
-            // 
-            // instrumentDataGridViewTextBoxColumn1
-            // 
-            this.instrumentDataGridViewTextBoxColumn1.DataPropertyName = "Instrument";
-            this.instrumentDataGridViewTextBoxColumn1.HeaderText = "Код";
-            this.instrumentDataGridViewTextBoxColumn1.Name = "instrumentDataGridViewTextBoxColumn1";
-            // 
-            // quantityDataGridViewTextBoxColumn1
-            // 
-            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Количество";
-            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
-            // 
-            // marketValueDataGridViewTextBoxColumn1
-            // 
-            this.marketValueDataGridViewTextBoxColumn1.DataPropertyName = "MarketValue";
-            this.marketValueDataGridViewTextBoxColumn1.HeaderText = "Оценка";
-            this.marketValueDataGridViewTextBoxColumn1.Name = "marketValueDataGridViewTextBoxColumn1";
-            // 
-            // percentDataGridViewTextBoxColumn
-            // 
-            this.percentDataGridViewTextBoxColumn.DataPropertyName = "Percent";
-            this.percentDataGridViewTextBoxColumn.HeaderText = "% СЧА";
-            this.percentDataGridViewTextBoxColumn.Name = "percentDataGridViewTextBoxColumn";
-            // 
-            // instrumentTypeDataGridViewTextBoxColumn1
-            // 
-            this.instrumentTypeDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentType";
-            this.instrumentTypeDataGridViewTextBoxColumn1.HeaderText = "Тип";
-            this.instrumentTypeDataGridViewTextBoxColumn1.Name = "instrumentTypeDataGridViewTextBoxColumn1";
-            // 
-            // instrumentSubtypeDataGridViewTextBoxColumn1
-            // 
-            this.instrumentSubtypeDataGridViewTextBoxColumn1.DataPropertyName = "InstrumentSubtype";
-            this.instrumentSubtypeDataGridViewTextBoxColumn1.HeaderText = "Подтип";
-            this.instrumentSubtypeDataGridViewTextBoxColumn1.Name = "instrumentSubtypeDataGridViewTextBoxColumn1";
-            // 
-            // secTypeBrDataGridViewTextBoxColumn
-            // 
-            this.secTypeBrDataGridViewTextBoxColumn.DataPropertyName = "SecTypeBr";
-            this.secTypeBrDataGridViewTextBoxColumn.HeaderText = "SecTypeBr";
-            this.secTypeBrDataGridViewTextBoxColumn.Name = "secTypeBrDataGridViewTextBoxColumn";
-            // 
-            // countryDataGridViewTextBoxColumn1
-            // 
-            this.countryDataGridViewTextBoxColumn1.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn1.HeaderText = "Страна";
-            this.countryDataGridViewTextBoxColumn1.Name = "countryDataGridViewTextBoxColumn1";
-            // 
-            // quoteSheetDataGridViewTextBoxColumn1
-            // 
-            this.quoteSheetDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSheet";
-            this.quoteSheetDataGridViewTextBoxColumn1.HeaderText = "Кот. лист";
-            this.quoteSheetDataGridViewTextBoxColumn1.Name = "quoteSheetDataGridViewTextBoxColumn1";
-            // 
-            // ownTypeDataGridViewTextBoxColumn1
-            // 
-            this.ownTypeDataGridViewTextBoxColumn1.DataPropertyName = "OwnType";
-            this.ownTypeDataGridViewTextBoxColumn1.HeaderText = "Тип собственности";
-            this.ownTypeDataGridViewTextBoxColumn1.Name = "ownTypeDataGridViewTextBoxColumn1";
-            // 
-            // bondsIssueSummDataGridViewTextBoxColumn1
-            // 
-            this.bondsIssueSummDataGridViewTextBoxColumn1.DataPropertyName = "BondsIssueSumm";
-            this.bondsIssueSummDataGridViewTextBoxColumn1.HeaderText = "Сумм. объем выпуска";
-            this.bondsIssueSummDataGridViewTextBoxColumn1.Name = "bondsIssueSummDataGridViewTextBoxColumn1";
-            // 
-            // quoteSDHDataGridViewTextBoxColumn1
-            // 
-            this.quoteSDHDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSDH";
-            this.quoteSDHDataGridViewTextBoxColumn1.HeaderText = "Котировка ЦХПИ";
-            this.quoteSDHDataGridViewTextBoxColumn1.Name = "quoteSDHDataGridViewTextBoxColumn1";
-            // 
-            // quoteSDHAgoDataGridViewTextBoxColumn1
-            // 
-            this.quoteSDHAgoDataGridViewTextBoxColumn1.DataPropertyName = "QuoteSDHAgo";
-            this.quoteSDHAgoDataGridViewTextBoxColumn1.HeaderText = "Возраст котировки ЦХПИ";
-            this.quoteSDHAgoDataGridViewTextBoxColumn1.Name = "quoteSDHAgoDataGridViewTextBoxColumn1";
-            this.quoteSDHAgoDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // volCirculationDataGridViewTextBoxColumn1
-            // 
-            this.volCirculationDataGridViewTextBoxColumn1.DataPropertyName = "VolCirculation";
-            this.volCirculationDataGridViewTextBoxColumn1.HeaderText = "Объем в обращении";
-            this.volCirculationDataGridViewTextBoxColumn1.Name = "volCirculationDataGridViewTextBoxColumn1";
-            // 
-            // contridDataGridViewTextBoxColumn2
-            // 
-            this.contridDataGridViewTextBoxColumn2.DataPropertyName = "contrid";
-            this.contridDataGridViewTextBoxColumn2.HeaderText = "contrid";
-            this.contridDataGridViewTextBoxColumn2.Name = "contridDataGridViewTextBoxColumn2";
-            // 
-            // capitalizationDataGridViewTextBoxColumn1
-            // 
-            this.capitalizationDataGridViewTextBoxColumn1.DataPropertyName = "Capitalization";
-            this.capitalizationDataGridViewTextBoxColumn1.HeaderText = "Капитализация";
-            this.capitalizationDataGridViewTextBoxColumn1.Name = "capitalizationDataGridViewTextBoxColumn1";
-            this.capitalizationDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // redemptionDateDataGridViewTextBoxColumn1
-            // 
-            this.redemptionDateDataGridViewTextBoxColumn1.DataPropertyName = "RedemptionDate";
-            this.redemptionDateDataGridViewTextBoxColumn1.HeaderText = "Дата погашения";
-            this.redemptionDateDataGridViewTextBoxColumn1.Name = "redemptionDateDataGridViewTextBoxColumn1";
-            // 
-            // securityIdDataGridViewTextBoxColumn1
-            // 
-            this.securityIdDataGridViewTextBoxColumn1.DataPropertyName = "SecurityId";
-            this.securityIdDataGridViewTextBoxColumn1.HeaderText = "SecurityId";
-            this.securityIdDataGridViewTextBoxColumn1.Name = "securityIdDataGridViewTextBoxColumn1";
-            // 
-            // issueNumDataGridViewTextBoxColumn1
-            // 
-            this.issueNumDataGridViewTextBoxColumn1.DataPropertyName = "IssueNum";
-            this.issueNumDataGridViewTextBoxColumn1.HeaderText = "Номер выпуска";
-            this.issueNumDataGridViewTextBoxColumn1.Name = "issueNumDataGridViewTextBoxColumn1";
-            // 
-            // announcedVolDataGridViewTextBoxColumn1
-            // 
-            this.announcedVolDataGridViewTextBoxColumn1.DataPropertyName = "AnnouncedVol";
-            this.announcedVolDataGridViewTextBoxColumn1.HeaderText = "Объем выпуска";
-            this.announcedVolDataGridViewTextBoxColumn1.Name = "announcedVolDataGridViewTextBoxColumn1";
-            // 
-            // dateStartPlacingDataGridViewTextBoxColumn1
-            // 
-            this.dateStartPlacingDataGridViewTextBoxColumn1.DataPropertyName = "DateStartPlacing";
-            this.dateStartPlacingDataGridViewTextBoxColumn1.HeaderText = "Дата начала размещения";
-            this.dateStartPlacingDataGridViewTextBoxColumn1.Name = "dateStartPlacingDataGridViewTextBoxColumn1";
-            // 
-            // dateEndPlacingDataGridViewTextBoxColumn1
-            // 
-            this.dateEndPlacingDataGridViewTextBoxColumn1.DataPropertyName = "DateEndPlacing";
-            this.dateEndPlacingDataGridViewTextBoxColumn1.HeaderText = "Дата окончания размещения";
-            this.dateEndPlacingDataGridViewTextBoxColumn1.Name = "dateEndPlacingDataGridViewTextBoxColumn1";
-            // 
-            // currencyDataGridViewTextBoxColumn1
-            // 
-            this.currencyDataGridViewTextBoxColumn1.DataPropertyName = "Currency";
-            this.currencyDataGridViewTextBoxColumn1.HeaderText = "Валюта";
-            this.currencyDataGridViewTextBoxColumn1.Name = "currencyDataGridViewTextBoxColumn1";
-            // 
-            // cBCodeDataGridViewTextBoxColumn1
-            // 
-            this.cBCodeDataGridViewTextBoxColumn1.DataPropertyName = "CB_Code";
-            this.cBCodeDataGridViewTextBoxColumn1.HeaderText = "CB_Code";
-            this.cBCodeDataGridViewTextBoxColumn1.Name = "cBCodeDataGridViewTextBoxColumn1";
-            // 
-            // iDCBSDHDataGridViewTextBoxColumn1
-            // 
-            this.iDCBSDHDataGridViewTextBoxColumn1.DataPropertyName = "ID_CB_SDH";
-            this.iDCBSDHDataGridViewTextBoxColumn1.HeaderText = "ID_CB_SDH";
-            this.iDCBSDHDataGridViewTextBoxColumn1.Name = "iDCBSDHDataGridViewTextBoxColumn1";
-            // 
-            // stateRegNumDataGridViewTextBoxColumn1
-            // 
-            this.stateRegNumDataGridViewTextBoxColumn1.DataPropertyName = "StateRegNum";
-            this.stateRegNumDataGridViewTextBoxColumn1.HeaderText = "ГРН";
-            this.stateRegNumDataGridViewTextBoxColumn1.Name = "stateRegNumDataGridViewTextBoxColumn1";
-            // 
-            // monthAvgVolDataGridViewTextBoxColumn1
-            // 
-            this.monthAvgVolDataGridViewTextBoxColumn1.DataPropertyName = "MonthAvgVol";
-            this.monthAvgVolDataGridViewTextBoxColumn1.HeaderText = "Среднемесячный объем";
-            this.monthAvgVolDataGridViewTextBoxColumn1.Name = "monthAvgVolDataGridViewTextBoxColumn1";
-            // 
-            // fRatingDataGridViewTextBoxColumn1
-            // 
-            this.fRatingDataGridViewTextBoxColumn1.DataPropertyName = "F_Rating";
-            this.fRatingDataGridViewTextBoxColumn1.HeaderText = "F_Rating";
-            this.fRatingDataGridViewTextBoxColumn1.Name = "fRatingDataGridViewTextBoxColumn1";
-            // 
-            // mRatingDataGridViewTextBoxColumn1
-            // 
-            this.mRatingDataGridViewTextBoxColumn1.DataPropertyName = "M_Rating";
-            this.mRatingDataGridViewTextBoxColumn1.HeaderText = "M_Rating";
-            this.mRatingDataGridViewTextBoxColumn1.Name = "mRatingDataGridViewTextBoxColumn1";
-            // 
-            // sPRatingDataGridViewTextBoxColumn1
-            // 
-            this.sPRatingDataGridViewTextBoxColumn1.DataPropertyName = "SP_Rating";
-            this.sPRatingDataGridViewTextBoxColumn1.HeaderText = "SP_Rating";
-            this.sPRatingDataGridViewTextBoxColumn1.Name = "sPRatingDataGridViewTextBoxColumn1";
-            // 
-            // eRatingDataGridViewTextBoxColumn1
-            // 
-            this.eRatingDataGridViewTextBoxColumn1.DataPropertyName = "E_Rating";
-            this.eRatingDataGridViewTextBoxColumn1.HeaderText = "E_Rating";
-            this.eRatingDataGridViewTextBoxColumn1.Name = "eRatingDataGridViewTextBoxColumn1";
-            // 
-            // aRatingDataGridViewTextBoxColumn1
-            // 
-            this.aRatingDataGridViewTextBoxColumn1.DataPropertyName = "A_Rating";
-            this.aRatingDataGridViewTextBoxColumn1.HeaderText = "A_Rating";
-            this.aRatingDataGridViewTextBoxColumn1.Name = "aRatingDataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NKR_Rating";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NKR_Rating";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NRA_Rating";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NRA_Rating";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // contrFRatingDataGridViewTextBoxColumn1
-            // 
-            this.contrFRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_F_Rating";
-            this.contrFRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_F_Rating";
-            this.contrFRatingDataGridViewTextBoxColumn1.Name = "contrFRatingDataGridViewTextBoxColumn1";
-            // 
-            // contrMRatingDataGridViewTextBoxColumn1
-            // 
-            this.contrMRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_M_Rating";
-            this.contrMRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_M_Rating";
-            this.contrMRatingDataGridViewTextBoxColumn1.Name = "contrMRatingDataGridViewTextBoxColumn1";
-            // 
-            // contrSPRatingDataGridViewTextBoxColumn1
-            // 
-            this.contrSPRatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_SP_Rating";
-            this.contrSPRatingDataGridViewTextBoxColumn1.HeaderText = "Contr_SP_Rating";
-            this.contrSPRatingDataGridViewTextBoxColumn1.Name = "contrSPRatingDataGridViewTextBoxColumn1";
-            // 
-            // contrERatingDataGridViewTextBoxColumn1
-            // 
-            this.contrERatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_E_Rating";
-            this.contrERatingDataGridViewTextBoxColumn1.HeaderText = "Contr_E_Rating";
-            this.contrERatingDataGridViewTextBoxColumn1.Name = "contrERatingDataGridViewTextBoxColumn1";
-            // 
-            // contrARatingDataGridViewTextBoxColumn1
-            // 
-            this.contrARatingDataGridViewTextBoxColumn1.DataPropertyName = "Contr_A_Rating";
-            this.contrARatingDataGridViewTextBoxColumn1.HeaderText = "Contr_A_Rating";
-            this.contrARatingDataGridViewTextBoxColumn1.Name = "contrARatingDataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Contr_NKR_Rating";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Contr_NKR_Rating";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contr_NRA_Rating";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Contr_NRA_Rating";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // enddateDataGridViewTextBoxColumn1
-            // 
-            this.enddateDataGridViewTextBoxColumn1.DataPropertyName = "enddate";
-            this.enddateDataGridViewTextBoxColumn1.HeaderText = "Дата окончания";
-            this.enddateDataGridViewTextBoxColumn1.Name = "enddateDataGridViewTextBoxColumn1";
-            // 
-            // isInIndexDataGridViewCheckBoxColumn1
-            // 
-            this.isInIndexDataGridViewCheckBoxColumn1.DataPropertyName = "IsInIndex";
-            this.isInIndexDataGridViewCheckBoxColumn1.HeaderText = "В индексе";
-            this.isInIndexDataGridViewCheckBoxColumn1.Name = "isInIndexDataGridViewCheckBoxColumn1";
-            // 
-            // isVariableCouponDataGridViewCheckBoxColumn1
-            // 
-            this.isVariableCouponDataGridViewCheckBoxColumn1.DataPropertyName = "IsVariableCoupon";
-            this.isVariableCouponDataGridViewCheckBoxColumn1.HeaderText = "Переменный купон";
-            this.isVariableCouponDataGridViewCheckBoxColumn1.Name = "isVariableCouponDataGridViewCheckBoxColumn1";
-            // 
-            // isQuantityGrowsDataGridViewCheckBoxColumn
-            // 
-            this.isQuantityGrowsDataGridViewCheckBoxColumn.DataPropertyName = "IsQuantityGrows";
-            this.isQuantityGrowsDataGridViewCheckBoxColumn.HeaderText = "IsQuantityGrows";
-            this.isQuantityGrowsDataGridViewCheckBoxColumn.Name = "isQuantityGrowsDataGridViewCheckBoxColumn";
-            this.isQuantityGrowsDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DaysToRedemption";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Дней до погашения";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // isbankDataGridViewCheckBoxColumn
-            // 
-            this.isbankDataGridViewCheckBoxColumn.DataPropertyName = "is_bank";
-            this.isbankDataGridViewCheckBoxColumn.HeaderText = "Банк";
-            this.isbankDataGridViewCheckBoxColumn.Name = "isbankDataGridViewCheckBoxColumn";
-            // 
-            // forqualinvestorsDataGridViewCheckBoxColumn
-            // 
-            this.forqualinvestorsDataGridViewCheckBoxColumn.DataPropertyName = "for_qual_investors";
-            this.forqualinvestorsDataGridViewCheckBoxColumn.HeaderText = "Для квал. инвесторов";
-            this.forqualinvestorsDataGridViewCheckBoxColumn.Name = "forqualinvestorsDataGridViewCheckBoxColumn";
-            // 
-            // isSubordinatedDataGridViewTextBoxColumn
-            // 
-            this.isSubordinatedDataGridViewTextBoxColumn.DataPropertyName = "IsSubordinated";
-            this.isSubordinatedDataGridViewTextBoxColumn.HeaderText = "Субординированная";
-            this.isSubordinatedDataGridViewTextBoxColumn.Name = "isSubordinatedDataGridViewTextBoxColumn";
             // 
             // Form_Main
             // 
