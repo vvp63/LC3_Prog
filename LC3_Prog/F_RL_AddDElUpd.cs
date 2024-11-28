@@ -71,8 +71,7 @@ namespace LC3_Prog
             string vSV = "C";
             if (gOwnerForm.gConn.State == ConnectionState.Open)
             {
-                SqlCommand vSqlCommand = new SqlCommand(string.Format("exec RL_GetShowCode '{0}'", aSV), gOwnerForm.gConn);
-                
+                SqlCommand vSqlCommand = new SqlCommand(string.Format("exec RL_GetShowCode '{0}'", aSV), gOwnerForm.gConn);           
                 SqlDataReader vReader = vSqlCommand.ExecuteReader();
                 while (vReader.Read()) vSV = vReader[0].ToString();
                 vReader.Close();
