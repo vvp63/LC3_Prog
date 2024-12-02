@@ -18,10 +18,11 @@
 					WHERE rlu.CORG = 'G' AND rlu.[RestrictType] = 'A'
 			)
 			AS rlu ON (rlu.[ClientId] = ft.[ClientCode] AND ft.[contrid] = rlu.[contrid] and rlu.[TypesList] LIKE '%' + ft.InstrumentType + '%')			
-			WHERE ft.[MarketValue] > 0 AND ft.[ClientCode] = 1
+			WHERE ft.[MarketValue] > 0 AND ft.[ClientCode] = 175
 
-
+/*
 	SELECT rlu.*, g.Id, g.GroupName, gc.contrid FROM [RL_Universal] AS rlu
 		LEFT JOIN [CL_Groups] AS g ON (g.Rid = rlu.CORGid)
 		LEFT JOIN [CL_GroupsContent] AS gc ON (gc.GroupId = g.Id)
 		WHERE rlu.CORG = 'G'
+		*/
