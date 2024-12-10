@@ -3,7 +3,7 @@
 include('incl/incl.php');
 
 $res = 0;
-if (isset($_POST["rid"])) {
+if ((is_admin(8)) && (isset($_POST["rid"]))) {
 	$query = "UPDATE RL_Universal SET ".($_POST["ix"] == "i" ? "Min" : "Max")." = ".$_POST["val"]." WHERE id = '".$_POST["rid"]."'";
 	$dbh->query($query);
 	$query = "SELECT ".($_POST["ix"] == "i" ? "Min" : "Max")." AS Val FROM RL_Universal WHERE id = '".$_POST["rid"]."'";

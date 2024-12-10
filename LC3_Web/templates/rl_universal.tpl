@@ -1,8 +1,7 @@
 {include file="header.tpl"}
 
-
 <script>
-	
+
 	$(function() {
 	
 		ShowFilteredList();
@@ -17,7 +16,7 @@
 			$("#corg_list").html('');	
 			if ($('#CORG').val() == 'G') { 
 				$("#opti").attr('disabled', true); 
-				$('#rtype').val('A');
+				$('#rtype').val('S');
 				$("#d_issues").hide();
 				$('#d_cbtypes').show();					
 			} else { 
@@ -140,7 +139,10 @@
 				const res = resp.split(';');
 				if (res[0] != 0) {
 					if (res[0] == 3) {
-						if (confirm(res[1])) document.getElementById("addupdate").submit();
+						if (confirm(res[1])) {
+							document.getElementById("fl").value = "add";
+							document.getElementById("addupdate").submit();
+						}
 					} else {
 						alert(res[1]);
 					}
@@ -235,7 +237,7 @@
 			document.getElementById(cb).checked = val && (document.getElementById(hidd).value == '0');			
 		}
 	}
-
+	
 </script>
 
 <form method="POST" id="cl_from"> 
@@ -259,7 +261,7 @@
 
 <form id="addupdate" method="POST" action="rl_universal.php">
 <table width=100% class=addupdate>
-<tr><td colspan=4 class=rltop id="addedittop">{if $aa.mode == "edit"}Редактировать ограничение{else}Добавить ограничение{/if}</td></tr>
+<tr><td colspan=4 class=rltop id="addedittop">{if $ia_8}{if $aa.mode == "edit"}Редактировать ограничение{else}Добавить ограничение{/if}{/if}</td></tr>
 <tr>
 	<td class=rlsubtop>Ограничение</td>
 	<td class=rlsubtop>Эмитент или группа</td>
@@ -274,8 +276,8 @@
 		</select><br><br>
 	Вид&nbsp;
 		<select name=rtype id=rtype>
-			<option value=A{if $aa.fl == "1" and $aa.rtype == "A"} selected{/if}{if $ad.fl != "1"} selected{/if}>Любая бумага из указанных типов</option>
-			<option value=S{if $aa.fl == "1" and $aa.rtype == "S"} selected{/if}>Сумма всех бумаг указанных типов</option>
+			<option value=S{if $aa.fl == "1" and $aa.rtype == "S"} selected{/if}{if $ad.fl != "1"} selected{/if}>Сумма всех бумаг указанных типов</option>
+			<option value=A{if $aa.fl == "1" and $aa.rtype == "A"} selected{/if}>Любая бумага из указанных типов</option>
 			<option value=I id=opti{if $aa.fl == "1" and $aa.rtype =="I"} selected{/if}>Конкретный выпуск</option>
 		</select><br>	
 	</td>
@@ -302,16 +304,19 @@
 	</div>
 </td>
 <td class=rlform>
+	{if $ia_8}
 	Минимум&nbsp;&nbsp;<input type=text name=minval id=minval value="{if $aa.fl == "1"}{$aa.minval|string_format:"%g"}{else}0{/if}"><br><br>
 	Максимум&nbsp;<input type=text name=maxval id=maxval value="{if $aa.fl == "1"}{$aa.maxval|string_format:"%g"}{else}0{/if}"><br><br>
 	<select name="ltype" id="ltype">
 		<option value=P{if $aa.fl == "1" and $aa.ltype == "P"} selected{/if}{if $aa.fl != "1"} selected{/if}>% от СЧА</option>
 		<option value=R{if $aa.fl == "1" and $aa.ltype == "R"} selected{/if}>Рублей</option>
 	</select><br><br>
+	<input type=checkbox name="nobuy" id="nobuy" value="1"{if $aa.fl == "1" and $aa.nobuy == "1"} checked{/if}> Запрет покупки<br><br>
 	<input type=hidden name="fl" id="fl" value="">
 	<input type=hidden name="ed_rid" id="ed_rid" value="{if $aa.fl == "1"}{$aa.ed_rid}{/if}">
 	<input type=button value="Сохранить" onclick="CheckRL()" class=butt>
 	{if $aa.mode == "edit"}&nbsp;&nbsp;<input type=button value="Отмена редактирования" class=butt id="editreset">{/if}
+	{/if}
 </td>
 </tr>
 
@@ -323,10 +328,10 @@
 </tr>
 
 </table>
-
+<br><br>
 
 <table width=100% class=main>
-<tr><td colspan=9 class=rltop>Список существующих ограничений</td></tr>
+<tr><td colspan=10 class=rltop>Список существующих ограничений</td></tr>
 <tr>
 	<td class=rlsubtop><input type=checkbox id=cb_all onchange="CheckAll(this.checked)"></td>
 	<td class=rlsubtop>Ограничение на</td>
@@ -335,10 +340,10 @@
 	<td class=rlsubtop>Минимум</td>
 	<td class=rlsubtop>Максимум</td>
 	<td class=rlsubtop>% СЧА / руб.</td>
+	<td class=rlsubtop>Запрет покупки</td>
 	<td class=rlsubtop>&nbsp;</td>
 	<td class=rlsubtop>&nbsp;</td>
 </tr>
-
 
 {foreach $rlu key=k item=v}
 <tr id="lstrows[{$v@iteration}]" class=rllist{$v@iteration % 2}>
@@ -358,17 +363,19 @@
 		<input type=hidden id="hiddiss[{$v@iteration}]" value="{$v.IssueRid}">
 		{($v.RestrictType == "I") ? $v.Issue : $v.TLNames}
 	</td>
-	<td><input type=text id="lim_i[{$v@iteration}]" value="{$v.Min|string_format:"%g"}" onchange="SetIX('i', {$v@iteration}, '{$k}')"></td>
-	<td><input type=text id="lim_x[{$v@iteration}]" value="{$v.Max|string_format:"%g"}" onchange="SetIX('x', {$v@iteration}, '{$k}')"></td>
+	<td><input type=text{if not $ia_8} disabled{/if} id="lim_i[{$v@iteration}]" value="{$v.Min|string_format:"%g"}" onchange="SetIX('i', {$v@iteration}, '{$k}')"></td>
+	<td><input type=text{if not $ia_8} disabled{/if} id="lim_x[{$v@iteration}]" value="{$v.Max|string_format:"%g"}" onchange="SetIX('x', {$v@iteration}, '{$k}')"></td>
 	<td>{($v.LimitType == "P") ? "% от СЧА" : "руб."}</td>
-	<td><input type=button class=butt_edit value="" onclick="SubmEdit('{$k}')"></td>
-	<td><input type=button class=butt_del value="" onclick="SubmDelete('{$k}')"></td>
+	<td>{if $v.NoBuy == "1"}<b class=nobuy>&nbsp;Запрещено!&nbsp;</b>{/if}</td>
+	<td>{if $ia_8}<input type=button class=butt_edit value="" onclick="SubmEdit('{$k}')">{/if}</td>
+	<td>{if $ia_8}<input type=button class=butt_del value="" onclick="SubmDelete('{$k}')">{/if}</td>
 </tr>
 
 {/foreach}
 
 </table>
 <br>
+{if $ia_8}
 Скопировать отмеченные на клиента 
 <select name="copytocl" id="copytocl" class=slct>
 	{foreach from=$clients key=k item=v}
@@ -380,7 +387,8 @@
 <input type=button value="Копировать" class=butt id="copy_all">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type=button value="Удалить отмеченные" class=butt_delch id="delch">
-</form>
+{/if}
 
+</form>
 
 {include file="footer.tpl"}
