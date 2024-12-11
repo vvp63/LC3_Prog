@@ -1,244 +1,7 @@
 {include file="header.tpl"}
 
-<script>
+<script src="js/rl_universal.js"></script>
 
-	$(function() {
-	
-		ShowFilteredList();
-	
-		$('#client').on('change', function(){
-			$('#cl_from').submit();
-		});	
-				
-		$('#CORG').on('change', function(){
-			$('#search_txt').val('');
-			$("#corg_list").attr("size", 1);
-			$("#corg_list").html('');	
-			if ($('#CORG').val() == 'G') { 
-				$("#opti").attr('disabled', true); 
-				$('#rtype').val('S');
-				$("#d_issues").hide();
-				$('#d_cbtypes').show();					
-			} else { 
-				$("#opti").attr('disabled', false); 
-			} 
-			ShowFilteredList();
-		});
-				
-		$('#rtype').on('change', function(){
-			if ($('#rtype').val() == 'I') { 
-				$('#d_cbtypes').hide();				
-				$("#d_issues").show(); 
-			} else { 
-				$("#d_issues").hide();
-				$('#d_cbtypes').show();				
-			} 
-			ShowFilteredList();
-		});
-		
-		$("#corg_list").on('change', function(){
-			ShowFilteredList();
-		});
-		
-		$("#cbtypes").on('change', function(){
-			ShowFilteredList();
-		});	
-		
-		$("#issues_list").on('change', function(){
-			ShowFilteredList();
-		});			
-								
-		$('#fl_cgrt').on('change', function(){
-			ShowFilteredList();
-		});
-		
-		$('#fl_cgid').on('change', function(){
-			ShowFilteredList();
-		});		
-		
-		$('#fl_tliss').on('change', function(){
-			ShowFilteredList();
-		});	
-
-		$('#editreset').on('click', function(){
-			$('#editreset').hide();
-			$('#ed_rid').val('');
-			$('#addedittop').html('Добавить ограничение');
-		});
-		
-		$('#copy_all').on('click', function(){
-			if (confirm("Выполнить копирование? Существующие ограничения будут заменены")) {
-				$('#fl').val('copyall');
-				$('#addupdate').submit();
-			}
-		});
-		
-		$('#delch').on('click', function(){
-			if (confirm("Удалить все отмеченные ограничения?")) {
-				$('#fl').val('delch');
-				$('#addupdate').submit();
-			}
-		});	
-								
-	});
-	
-
-	function FindContr(str) {	
-		if (str.length < 2) {
-			document.getElementById("corg_list").innerHTML="";
-			return;
-		}
-		xmlhttp=new XMLHttpRequest();
-		var body = 'search_txt=' + encodeURIComponent(str) + '&CORG=' + encodeURIComponent(document.getElementById("CORG").value);
-		xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-				document.getElementById("corg_list").innerHTML=this.responseText;
-				document.getElementById("corg_list").size = 10;
-			}
-		}
-		xmlhttp.open("POST", "./s_contr_find.php", true);
-		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xmlhttp.send(body);
-	}	
-	
-	function SetFndStr(contrid) {
-		document.getElementById("corg_list").size = 1;
-		xmlhttp=new XMLHttpRequest();
-		var body = 'contrid=' + encodeURIComponent(contrid);
-		xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-				document.getElementById("issues_list").innerHTML=this.responseText;
-				document.getElementById("issues_list").size = 10;
-			}
-		}
-		xmlhttp.open("POST", "./s_issue_find.php", true);
-		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xmlhttp.send(body);		
-	}
-	
-	function TypesListStr() {
-		var ct = '';
-		const options = document.getElementById('cbtypes').options;
-		for (let opt of options) {
-			if (opt.selected) ct = ct + opt.value + ';';
-		}
-		return ct;
-	}
-	
-	function CheckRL() {
-		var cbtypes = TypesListStr();
-		xmlhttp=new XMLHttpRequest();
-		var body = 	'CORG=' + encodeURIComponent(document.getElementById("CORG").value) + '&rtype=' + encodeURIComponent(document.getElementById("rtype").value) +
-					'&corgid=' + encodeURIComponent(document.getElementById("corg_list").value) + '&cbtypes=' + encodeURIComponent(cbtypes) + 
-					'&issueid=' + encodeURIComponent(document.getElementById("issues_list").value) + '&client=' + encodeURIComponent(document.getElementById("client").value) + 
-					'&minval=' + encodeURIComponent(document.getElementById("minval").value) + '&maxval=' + encodeURIComponent(document.getElementById("maxval").value) +
-					'&ltype=' + encodeURIComponent(document.getElementById("ltype").value);	
-		xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-				var resp = this.responseText;
-				const res = resp.split(';');
-				if (res[0] != 0) {
-					if (res[0] == 3) {
-						if (confirm(res[1])) {
-							document.getElementById("fl").value = "add";
-							document.getElementById("addupdate").submit();
-						}
-					} else {
-						alert(res[1]);
-					}
-				} else {
-					document.getElementById("fl").value = "add";
-					document.getElementById("addupdate").submit();
-				}
-			}
-		}
-		xmlhttp.open("POST", "./s_check_rl.php", true);
-		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xmlhttp.send(body);
-	}		
-	
-	
-	function ShowFilteredList() {
-		var lstcount = {$rlu|@count};
-		var flCGRL = document.getElementById("CORG").value + document.getElementById("rtype").value;
-		for (let i = 1; i <= lstcount; i++) {
-			var flt_result = 1;
-			var rid = 'lstrows[' + i +']';
-			var flcgrt = 'hiddcgrt[' + i +']';
-			var flcgid = 'hiddcgid[' + i +']';
-			var fltl = 'hiddtl[' + i +']';
-			var fliss = 'hiddiss[' + i +']';
-			var hidd = 'hidd[' + i +']';
-			var cb = 'cb[' + i +']';
-			if ( (document.getElementById("fl_cgrt").checked) && (document.getElementById(flcgrt).value != flCGRL) ) {
-				flt_result = 0;
-			}
-			
-			if ( (document.getElementById("fl_cgid").checked) && (document.getElementById("corg_list").value != "") && 
-					(document.getElementById("corg_list").value != document.getElementById(flcgid).value) ) {
-				flt_result = 0;
-			}	
-
-			if (document.getElementById("fl_tliss").checked) {
-				if (document.getElementById("rtype").value == 'I')  {
-					if ( (document.getElementById("issues_list").value != "") &&  (document.getElementById("issues_list").value != document.getElementById(fliss).value) )
-						flt_result = 0;
-				} else {
-					var cbtypes = TypesListStr();
-					if (document.getElementById(fltl).value != cbtypes) flt_result = 0;
-				}
-			}
-		
-			if (flt_result == 0) {
-				document.getElementById(rid).style.display='none';
-				document.getElementById(hidd).value = '1';
-				document.getElementById(cb).checked = false;
-			} else {
-				document.getElementById(rid).style.display='';
-				document.getElementById(hidd).value = '0';
-			}			
-		}
-	}
-	
-	function SubmEdit(rid) {
-		document.getElementById("fl").value = "edit";
-		document.getElementById("ed_rid").value = rid;
-		document.getElementById("addupdate").submit();	
-	}
-	
-	function SubmDelete(rid) {
-		if (confirm("Вы уверены, что хотите удалить запись?")) {
-			document.getElementById("fl").value = "del";
-			document.getElementById("ed_rid").value = rid;
-			document.getElementById("addupdate").submit();			
-		}
-	}
-	
-	function SetIX(ix_type, itt, rid) {
-		var iid = 'lim_' + ix_type + '[' + itt +']';
-		xmlhttp=new XMLHttpRequest();
-		var body = 	'rid=' + encodeURIComponent(rid) + '&ix=' + encodeURIComponent(ix_type) +
-					'&val=' + encodeURIComponent(document.getElementById(iid).value);	
-		xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-				document.getElementById(iid).value = this.responseText;
-			}
-		}
-		xmlhttp.open("POST", "./s_ix_change.php", true);
-		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xmlhttp.send(body);		
-	}
-	
-	function CheckAll(val) {
-		var lstcount = {$rlu|@count};
-		for (let i = 1; i <= lstcount; i++) {
-			var hidd = 'hidd[' + i +']';
-			var cb = 'cb[' + i +']';
-			document.getElementById(cb).checked = val && (document.getElementById(hidd).value == '0');			
-		}
-	}
-	
-</script>
 
 <form method="POST" id="cl_from"> 
 <table width=100% class=main><tr><td class=client>
@@ -330,8 +93,9 @@
 </table>
 <br><br>
 
+<input type=hidden id="rlu_count" value="{$rlu|@count}">
 <table width=100% class=main>
-<tr><td colspan=10 class=rltop>Список существующих ограничений</td></tr>
+<tr><td colspan=11 class=rltop>Список существующих ограничений</td></tr>
 <tr>
 	<td class=rlsubtop><input type=checkbox id=cb_all onchange="CheckAll(this.checked)"></td>
 	<td class=rlsubtop>Ограничение на</td>
@@ -341,6 +105,7 @@
 	<td class=rlsubtop>Максимум</td>
 	<td class=rlsubtop>% СЧА / руб.</td>
 	<td class=rlsubtop>Запрет покупки</td>
+	<td class=rlsubtop>В портфеле</td>	
 	<td class=rlsubtop>&nbsp;</td>
 	<td class=rlsubtop>&nbsp;</td>
 </tr>
@@ -357,7 +122,13 @@
 		{($v.RestrictType == "I") ? "Конкретный выпуск" : (($v.RestrictType == "A") ? "Любая бумага" : "Сумма всех бумаг")} 
 		{($v.CORG == "C") ? "эмитента" : "группы"}
 	</td>
-	<td><input type=hidden id="hiddcgid[{$v@iteration}]" value="{$v.CORGid}">{$v.CORGname}</td>
+	<td><input type=hidden id="hiddcgid[{$v@iteration}]" value="{$v.CORGid}">
+		{if $v.CORG == "C"}
+			<a target="_blank" href="{$sdh_c_lnk}{$v.CORGid}">{$v.CORGname}</a>
+		{else}
+			{$v.CORGname}
+		{/if}
+	</td>
 	<td>
 		<input type=hidden id="hiddtl[{$v@iteration}]" value="{$v.TypesList}">
 		<input type=hidden id="hiddiss[{$v@iteration}]" value="{$v.IssueRid}">
@@ -367,10 +138,10 @@
 	<td><input type=text{if not $ia_8} disabled{/if} id="lim_x[{$v@iteration}]" value="{$v.Max|string_format:"%g"}" onchange="SetIX('x', {$v@iteration}, '{$k}')"></td>
 	<td>{($v.LimitType == "P") ? "% от СЧА" : "руб."}</td>
 	<td>{if $v.NoBuy == "1"}<b class=nobuy>&nbsp;Запрещено!&nbsp;</b>{/if}</td>
+	<td><u onclick="PortfOpen({$smarty.session.client}, '{$k}')">{$v.Percent|string_format:"%g"}</u></td>
 	<td>{if $ia_8}<input type=button class=butt_edit value="" onclick="SubmEdit('{$k}')">{/if}</td>
 	<td>{if $ia_8}<input type=button class=butt_del value="" onclick="SubmDelete('{$k}')">{/if}</td>
 </tr>
-
 {/foreach}
 
 </table>

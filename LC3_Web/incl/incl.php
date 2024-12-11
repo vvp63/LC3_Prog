@@ -18,5 +18,7 @@ function is_admin($level) {
     return (($level & $_SESSION["admin"]["AccessMode"]) > 0);
 }
 
+if (!is_admin(1)) die("Вы, наверное, не являетесь пользователем Контроля Лимитов...");
+
 
 ?>

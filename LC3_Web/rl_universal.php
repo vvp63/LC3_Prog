@@ -2,22 +2,10 @@
 
 include("./incl/header.php");
 
-
 if (!isset($_SESSION["client"])) $_SESSION["client"] = 1;
 if ($_POST["client"]) $_SESSION["client"] = $_POST["client"];
 
 $ia_8 = is_admin(8); 
-
-
-$clients = array();
-foreach($dbh->query("SELECT [КодКлиента] AS clientid, [НаименованиеКлиента] AS name, [ПолноеНаименование] AS fullname FROM [dbo].[_CL_Clients]") as $row) {
-	$clients[$row["clientid"]] = $row;
-}
-
-$cbtypes = array();
-foreach($dbh->query("SELECT [Id], [Value], [Name] FROM [dbo].[CLlst_Types] ORDER BY [Id]") as $row) {
-	$cbtypes[$row["Value"]] = $row["Name"];
-}
 
 $message = "";
 
@@ -26,9 +14,6 @@ $aa["cbtypes"] = $_POST["cbtypes"]; $aa["ltype"] = $_POST["ltype"];
 $aa["minval"] = $_POST["minval"]; $aa["maxval"] = $_POST["maxval"]; $aa["nobuy"] = $_POST["nobuy"];
 $aa["cgrid"] = $_POST["corg_list"]; $aa["issueid"] = $_POST["issues_list"];
 $aa["fl_cgrt"] = $_POST["fl_cgrt"]; $aa["fl_cgid"] = $_POST["fl_cgid"];  $aa["fl_tliss"] = $_POST["fl_tliss"];
-
-
-
 
 if ( ($ia_8) && ($_POST["fl"] == "del") && (isset($_POST["ed_rid"])) ) {
 	$aa["fl"] = 1;
@@ -54,8 +39,6 @@ if ( ($ia_8) && ($_POST["fl"] == "edit")) {
 		$message = "Клиент не выбран.";
 	}	
 }
-
-		//print_r($_POST);
 
 //	Добавление или редактирование записи
 if ( ($ia_8) && ($_POST["fl"] == "add")) {
@@ -134,12 +117,19 @@ foreach($dbh->query($query) as $row) {
 }
 
 
+$query = "SELECT [id], [Percent] FROM [RL_U_CurrPos] WHERE [ClientId] = ".$_SESSION["client"];
+foreach($dbh->query($query) as $row) {
+	$rlu[$row["id"]]["Percent"] = $row["Percent"];
+}
+
+$smarty->assign("title", "LC3 Universal Restrict List");
 $smarty->assign("clients", $clients);
 $smarty->assign("cbtypes", $cbtypes);
 $smarty->assign("message", $message);
 $smarty->assign("aa", $aa);
 $smarty->assign("rlu", $rlu);
 $smarty->assign("ia_8", $ia_8);
+$smarty->assign("sdh_c_lnk", "http://sdh/main?sysname=le_contragent_info&rid=");
 
 $smarty->display("templates/rl_universal.tpl");
 

@@ -19,3 +19,7 @@ select.slct {width: 500px; font-size: 16px;}
 .vis {display: inline;}
 .unvis {display: none;}
 b.nobuy {background-color: #FFB0B0;}
+
+table.portfrl {border: 1px solid #E8E8FF; margin: 1 px; padding: 1px; background-color: #F9F9FF; font-size: 14px;}
+tr.restricted {vertical-align: middle; padding: 3px; margin: 0px;  background-color: #FFC7C7;}
+u {cursor: pointer;}
