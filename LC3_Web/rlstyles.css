@@ -6,6 +6,7 @@ table.addupdate {border: 2px solid #C0C0F0; margin: 1 px; padding: 1px; backgrou
 td.rlform {width: 500px; height: 220px; vertical-align: top; padding: 5px; margin: 0px;  font-size: 16px;  border: 1px solid #C0C0F0;}
 td.rltop {vertical-align: top; padding: 7px; background-color: #E0E0FF; border: 1px solid #C0C0F0; font-size: 17px; font-weight: bold; }
 td.rlsubtop {vertical-align: top; padding: 5px; background-color: #E8E8FF; border: 1px solid #C0C0F0; font-size: 15px; font-weight: bold; }
+
 tr.rllist0 {vertical-align: middle; padding: 3px; margin: 0px; background-color: #FBFBFF;}
 tr.rllist1 {vertical-align: middle; padding: 3px; margin: 0px;  background-color: #F4F4FF;}
 
@@ -20,6 +21,13 @@ select.slct {width: 500px; font-size: 16px;}
 .unvis {display: none;}
 b.nobuy {background-color: #FFB0B0;}
 
-table.portfrl {border: 1px solid #E8E8FF; margin: 1 px; padding: 1px; background-color: #F9F9FF; font-size: 14px;}
+table.portfrl {border: 1px solid #E8E8FF; margin: 1 px; padding: 1px; background-color: #F9F9FF; font-size: 12px;}
 tr.restricted {vertical-align: middle; padding: 3px; margin: 0px;  background-color: #FFC7C7;}
 u {cursor: pointer;}
+td.portftop {vertical-align: top; padding: 2px; background-color: #E8FFE8; border: 1px solid #C0F0C0; font-size: 13px; font-weight: bold; }
+tr.portf0 {vertical-align: middle; padding: 1px; margin: 0px; background-color: #FBFFFB; white-space: nowrap;}
+tr.portf1 {vertical-align: middle; padding: 1px; margin: 0px;  background-color: #F4FFF4; white-space: nowrap;}
+td.flt {padding: 5px; font-size: 16px;  border: 1px solid #C0C0F0; width: 100%;}
+td.scha {padding: 5px; font-size: 16px;  border: 1px solid #C0C0F0; background-color: #E0E0F9; white-space: nowrap;}
+
+td.pstat {width: 300px; vertical-align: top; text-align: left; font-size: 17px; font-weight: bold; padding: 10px;}

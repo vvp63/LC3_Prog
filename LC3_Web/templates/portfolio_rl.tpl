@@ -2,20 +2,20 @@
 
 <table width=100% class=portfrl>
 <tr>
-	<td class=rlsubtop>Инструмент</td>
-	<td class=rlsubtop>Эмитент</td>
-	<td class=rlsubtop>Тип инструмента</td>
-	<td class=rlsubtop>Количество</td>
-	<td class=rlsubtop>Рыночная оценка</td>
-	<td class=rlsubtop>% СЧА</td>
+	<td class=portftop>Инструмент</td>
+	<td class=portftop>Эмитент</td>
+	<td class=portftop>Тип инструмента</td>
+	<td class=portftop>Количество</td>
+	<td class=portftop>Рыночная оценка</td>
+	<td class=portftop>% СЧА</td>
 </tr>
-{foreach $portf key=k item=v}
-<tr class={if $v.isrestr == 1}restricted{else}rllist{$k % 2}{/if}>
+{foreach from=$portf key=k item=v}
+<tr class={if $v.isrestr == 1}restricted{else}portf{$k % 2}{/if}>
 	<td>{$v.FullName}</td>
 	<td>{$v.Issuer}</td>
 	<td>{$v.InstrumentType}</td>
 	<td>{$v.Quantity}</td>
-	<td>{$v.MarketValue}</td>
+	<td>{$v.MarketValue|string_format:"%g"}</td>
 	<td>{$v.Percent|string_format:"%g"}</td>
 </tr>
 {/foreach}

@@ -117,14 +117,13 @@ foreach($dbh->query($query) as $row) {
 }
 
 
-$query = "SELECT [id], [Percent] FROM [RL_U_CurrPos] WHERE [ClientId] = ".$_SESSION["client"];
+$query = "SELECT [id], [Percent], [MarketValue] FROM [RL_U_CurrPos] WHERE [ClientId] = ".$_SESSION["client"];
 foreach($dbh->query($query) as $row) {
 	$rlu[$row["id"]]["Percent"] = $row["Percent"];
+	$rlu[$row["id"]]["MarketValue"] = $row["MarketValue"];
 }
 
 $smarty->assign("title", "LC3 Universal Restrict List");
-$smarty->assign("clients", $clients);
-$smarty->assign("cbtypes", $cbtypes);
 $smarty->assign("message", $message);
 $smarty->assign("aa", $aa);
 $smarty->assign("rlu", $rlu);
