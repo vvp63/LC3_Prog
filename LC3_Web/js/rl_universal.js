@@ -169,12 +169,12 @@
 			if ( (document.getElementById("fl_cgrt").checked) && (document.getElementById(flcgrt).value != flCGRL) ) {
 				flt_result = 0;
 			}
-			
+
 			if ( (document.getElementById("fl_cgid").checked) && (document.getElementById("corg_list").value != "") && 
 					(document.getElementById("corg_list").value != document.getElementById(flcgid).value) ) {
 				flt_result = 0;
 			}	
-
+			
 			if (document.getElementById("fl_tliss").checked) {
 				if (document.getElementById("rtype").value == 'I')  {
 					if ( (document.getElementById("issues_list").value != "") &&  (document.getElementById("issues_list").value != document.getElementById(fliss).value) )
@@ -184,7 +184,7 @@
 					if (document.getElementById(fltl).value != cbtypes) flt_result = 0;
 				}
 			}
-		
+
 			if (flt_result == 0) {
 				document.getElementById(rid).style.display='none';
 				document.getElementById(hidd).value = '1';

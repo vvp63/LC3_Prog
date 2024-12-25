@@ -3,7 +3,6 @@
 
 <script src="js/rl_universal.js"></script>
 
-
 <form method="POST" id="cl_from"> 
 <table width=100% class=main><tr><td class=client>
 	<b>Клиент</b>
@@ -21,7 +20,6 @@
 {$message}
 </div>
 <br>
-
 
 <form id="addupdate" method="POST" action="rl_universal.php">
 <table width=100% class=addupdate>
@@ -120,15 +118,10 @@
 	</td>
 	<td>
 		<input type=hidden id="hiddcgrt[{$v@iteration}]" value="{$v.CORG}{$v.RestrictType}">
-		{($v.RestrictType == "I") ? "Конкретный выпуск" : (($v.RestrictType == "A") ? "Любая бумага" : "Сумма всех бумаг")} 
-		{($v.CORG == "C") ? "эмитента" : "группы"}
+		{($v.RestrictType == "I") ? "Конкретный выпуск" : (($v.RestrictType == "A") ? "Любая бумага" : "Сумма всех бумаг")} {($v.CORG == "C") ? "эмитента" : "группы"}
 	</td>
 	<td><input type=hidden id="hiddcgid[{$v@iteration}]" value="{$v.CORGid}">
-		{if $v.CORG == "C"}
-			<a target="_blank" href="{$sdh_c_lnk}{$v.CORGid}">{$v.CORGname}</a>
-		{else}
-			{$v.CORGname}
-		{/if}
+		{if $v.CORG == "C"}<a target="_blank" href="{$sdh_c_lnk}{$v.CORGid}">{$v.CORGname}</a>{else}{$v.CORGname}{/if}
 	</td>
 	<td>
 		<input type=hidden id="hiddtl[{$v@iteration}]" value="{$v.TypesList}">
@@ -138,11 +131,7 @@
 	<td><input type=text{if not $ia_8} disabled{/if} id="lim_i[{$v@iteration}]" value="{$v.Min|string_format:"%g"}" onchange="SetIX('i', {$v@iteration}, '{$k}')"></td>
 	<td><input type=text{if not $ia_8} disabled{/if} id="lim_x[{$v@iteration}]" value="{$v.Max|string_format:"%g"}" onchange="SetIX('x', {$v@iteration}, '{$k}')"></td>
 	<td>{($v.LimitType == "P") ? "% от СЧА" : "руб."}</td>
-	<td>
-		{if $v.NoBuy == "1"}<b class=nobuy>&nbsp;Запрещено!&nbsp;</b>{else}
-			{if $v.LimitType == "P"}{($v.Max-$v.Percent)|string_format:"%g"}{else}{($v.Max-$v.MarketValue)|string_format:"%g"}{/if}
-		{/if}
-	</td>
+	<td>{if $v.NoBuy == "1"}<b class=nobuy>&nbsp;Запрещено!&nbsp;</b>{else}{if $v.LimitType == "P"}{($v.Max-$v.Percent)|string_format:"%g"}{else}{($v.Max-$v.MarketValue)|string_format:"%g"}{/if}{/if}</td>
 	<td><u onclick="PortfOpen({$smarty.session.client}, '{$k}')">{if $v.LimitType == "P"}{$v.Percent|string_format:"%g"}{else}{$v.MarketValue|string_format:"%g"}{/if}</u></td>
 	<td>{if $ia_8}<input type=button class=butt_edit value="" onclick="SubmEdit('{$k}')">{/if}</td>
 	<td>{if $ia_8}<input type=button class=butt_del value="" onclick="SubmDelete('{$k}')">{/if}</td>
