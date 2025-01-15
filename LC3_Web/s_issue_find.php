@@ -10,10 +10,6 @@ foreach ($dbh->query($query) as $row) {
 	$issues[$row[rid]] = $row;
 }
 
-foreach ($dbh->query($query) as $row) {
-	$issues[$row[rid]] = $row;
-}
-
 foreach ($issues as $k=>$v) print("<option value='".$k."'>".$v["FullName"]."</option>");
 
 

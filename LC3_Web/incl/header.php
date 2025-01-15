@@ -12,8 +12,6 @@ foreach($dbh->query("SELECT [Id], [Value], [Name] FROM [dbo].[CLlst_Types] ORDER
 	$cbtypes[$row["Value"]] = $row["Name"];
 }
 
-include('./smarty/libs/Smarty.class.php');
-$smarty = new Smarty;
 
 $menu = array(  "/rl_universal.php" => "Лимитная ведомость", 
 				"/portfolio.php" => "Портфели клиентов"

@@ -20,5 +20,7 @@ function is_admin($level) {
 
 if (!is_admin(1)) die("Вы, наверное, не являетесь пользователем Контроля Лимитов...");
 
+include('./smarty/libs/Smarty.class.php');
+$smarty = new Smarty;
 
 ?>
