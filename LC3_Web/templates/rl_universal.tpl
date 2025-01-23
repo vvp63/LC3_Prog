@@ -8,9 +8,7 @@
 	<b>Клиент</b>
 	<select name=client id=client>
 		{foreach from=$clients key=k item=v}
-			{if $k > 0}
-			<option value={$k}{if $k==$smarty.session.client} selected{/if}>{$v.fullname}</option>
-			{/if}
+		<option value={$k}{if $k==$smarty.session.clientid} selected{/if}>{$v.fullname|trim}</option>
 		{/foreach}
 	</select>
 </td></tr></table>
@@ -132,7 +130,7 @@
 	<td><input type=text{if not $ia_8} disabled{/if} id="lim_x[{$v@iteration}]" value="{$v.Max|string_format:"%g"}" onchange="SetIX('x', {$v@iteration}, '{$k}')"></td>
 	<td>{($v.LimitType == "P") ? "% от СЧА" : "руб."}</td>
 	<td>{if $v.NoBuy == "1"}<b class=nobuy>&nbsp;Запрещено!&nbsp;</b>{else}{if $v.LimitType == "P"}{($v.Max-$v.Percent)|string_format:"%g"}{else}{($v.Max-$v.MarketValue)|string_format:"%g"}{/if}{/if}</td>
-	<td><u onclick="PortfOpen({$smarty.session.client}, '{$k}')">{if $v.LimitType == "P"}{$v.Percent|string_format:"%g"}{else}{$v.MarketValue|string_format:"%g"}{/if}</u></td>
+	<td><u onclick="PortfOpen({$smarty.session.clientid}, '{$k}')">{if $v.LimitType == "P"}{$v.Percent|string_format:"%g"}{else}{$v.MarketValue|string_format:"%g"}{/if}</u></td>
 	<td>{if $ia_8}<input type=button class=butt_edit value="" onclick="SubmEdit('{$k}')">{/if}</td>
 	<td>{if $ia_8}<input type=button class=butt_del value="" onclick="SubmDelete('{$k}')">{/if}</td>
 </tr>
@@ -145,7 +143,7 @@
 <select name="copytocl" id="copytocl" class=slct>
 	{foreach from=$clients key=k item=v}
 		{if $k > 0}
-		<option value={$k}{if $k==$smarty.session.client} disabled{/if}>{$v.fullname}</option>
+		<option value={$k}{if $k==$smarty.session.clientid} disabled{/if}>{$v.fullname}</option>
 		{/if}
 	{/foreach}
 </select>

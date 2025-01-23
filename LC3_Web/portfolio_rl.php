@@ -27,7 +27,4 @@ $smarty->assign("portf", $portf);
 
 $smarty->display("templates/portfolio_rl.tpl");
 
-
-
-
 ?>

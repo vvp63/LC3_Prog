@@ -41,13 +41,6 @@
 			} else {
 				document.getElementById(rid).style.display='';
 				document.getElementById(rid).className = 'restricted';
-				/*
-				if (document.getElementById("fl_hide").checked) {
-					document.getElementById(rid).className = 'portf' + i % 2;
-				} else {
-					document.getElementById(rid).className = 'restricted';
-				}
-				*/
 			}			
 		}
 	}

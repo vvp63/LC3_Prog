@@ -9,6 +9,7 @@ td.rlsubtop {vertical-align: top; padding: 5px; background-color: #E8E8FF; borde
 
 tr.rllist0 {vertical-align: middle; padding: 3px; margin: 0px; background-color: #FBFBFF;}
 tr.rllist1 {vertical-align: middle; padding: 3px; margin: 0px;  background-color: #F4F4FF;}
+tr.rllist_na {vertical-align: middle; padding: 3px; margin: 0px;  background-color: #F4F4F4;}
 
 .srch {width: 450px; font-size: 16px;}
 select {margin: 2px; font-size: 16px;}
@@ -31,3 +32,13 @@ td.flt {padding: 5px; font-size: 16px;  border: 1px solid #C0C0F0; width: 100%;}
 td.scha {padding: 5px; font-size: 16px;  border: 1px solid #C0C0F0; background-color: #E0E0F9; white-space: nowrap;}
 
 td.pstat {width: 300px; vertical-align: top; text-align: left; font-size: 17px; font-weight: bold; padding: 10px;}
+
+td.cnt {text-align: center;}
+
+table.checkres {border: 1px solid #E8E8C0; margin: 1 px; padding: 1px; background-color: #FFFFF9; font-size: 13px;}
+td.checktop { font-weight: bold; margin: 1 px; padding: 1px; background-color: #FFFFE9; border: 1px solid #E8E8C0;}
+td.res_ok {background-color: #40CF40; text-align: center; width: 50px; }
+td.res_warn {background-color: #C0C040; text-align: center; width: 50px; }
+td.res_err {background-color: #CF4040; text-align: center; width: 50px; }
+b.limcl {font-size: 14; color: #303010;}
+.butt_chall {font-size: 18px; padding: 5px; background-color: #C0E9C0; border: 2px solid #80C080; font-color: #105010; cursor: pointer; font-weight: bold;}

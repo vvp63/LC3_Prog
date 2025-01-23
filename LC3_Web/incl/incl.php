@@ -18,6 +18,12 @@ function is_admin($level) {
     return (($level & $_SESSION["admin"]["AccessMode"]) > 0);
 }
 
+function arr_head($arr) {
+	$res = array(); $j=0;
+	if (isset($arr[0])) foreach ($arr[0] as $k=>$v) if (!is_int($k)) $res[$j++] = $k;
+	return $res;
+}
+
 if (!is_admin(1)) die("Вы, наверное, не являетесь пользователем Контроля Лимитов...");
 
 include('./smarty/libs/Smarty.class.php');

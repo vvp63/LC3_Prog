@@ -3,9 +3,12 @@
 include('./incl/incl.php');
 
 $clients = array();
-foreach($dbh->query("SELECT [КодКлиента] AS clientid, [НаименованиеКлиента] AS name, [ПолноеНаименование] AS fullname FROM [dbo].[_CL_Clients]") as $row) {
+foreach($dbh->query("SELECT [КодКлиента] AS clientid, [НаименованиеКлиента] AS name, [ПолноеНаименование] AS fullname FROM [dbo].[_CL_Clients] WHERE [КодКлиента] > 0") as $row) {
 	$clients[$row["clientid"]] = $row;
 }
+
+$limits = array();
+foreach($dbh->query("SELECT [Id], [Name] FROM [_CL_CL] ORDER BY [Name]") as $row) $limits[$row["Id"]] = $row;
 
 $cbtypes = array();
 foreach($dbh->query("SELECT [Id], [Value], [Name] FROM [dbo].[CLlst_Types] ORDER BY [Id]") as $row) {
@@ -20,6 +23,7 @@ $menu = array(  "/rl_universal.php" => "Лимитная ведомость",
 $smarty->assign("menu", $menu);
 $smarty->assign("script_name", $_SERVER['SCRIPT_NAME']);
 $smarty->assign("clients", $clients);
+$smarty->assign("limits", $limits);
 $smarty->assign("cbtypes", $cbtypes);
 
 ?>

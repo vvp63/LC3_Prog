@@ -2,8 +2,7 @@
 
 include("./incl/header.php");
 
-if (!isset($_SESSION["client"])) $_SESSION["client"] = 1;
-if ($_POST["client"]) $_SESSION["client"] = $_POST["client"];
+$_SESSION["clientid"] = ($_POST["client"] ? $_POST["client"] : ($_SESSION["clientid"] ? $_SESSION["clientid"] : 1));
 
 $ia_8 = is_admin(8); 
 
@@ -24,11 +23,11 @@ if ( ($ia_8) && ($_POST["fl"] == "del") && (isset($_POST["ed_rid"])) ) {
 
 //	Вход в редактирование записи
 if ( ($ia_8) && ($_POST["fl"] == "edit")) {
-	if (isset($_SESSION["client"]) && ($_SESSION["client"] > 0)) {
+	if (isset($_SESSION["clientid"]) && ($_SESSION["clientid"] > 0)) {
 		$aa["fl"] = 1; $aa["mode"] = "edit"; $aa["ed_rid"] = $_POST["ed_rid"];
 	
 		$query = "SELECT CORG, CORGid, RestrictType, IssueRid, TypesList, LimitType, Min, Max, NoBuy
-						FROM RL_Universal WHERE id = '".$aa["ed_rid"]."' AND ClientId = '".$_SESSION["client"]."'";
+						FROM RL_Universal WHERE id = '".$aa["ed_rid"]."' AND ClientId = '".$_SESSION["clientid"]."'";
 		foreach($dbh->query($query) as $row) {
 			$aa["CORG"] = $row["CORG"]; $aa["rtype"] = $row["RestrictType"];
 			$aa["cbtypes"] = explode(";", $row["TypesList"]); $aa["ltype"] = $row["LimitType"]; 
@@ -42,7 +41,7 @@ if ( ($ia_8) && ($_POST["fl"] == "edit")) {
 
 //	Добавление или редактирование записи
 if ( ($ia_8) && ($_POST["fl"] == "add")) {
-	if (isset($_SESSION["client"]) && ($_SESSION["client"] > 0)) {	
+	if (isset($_SESSION["clientid"]) && ($_SESSION["clientid"] > 0)) {	
 		$cbt = ""; foreach ($aa["cbtypes"] as $t) $cbt .= $t.";";
 		$aa["fl"] = 1;
 
@@ -50,7 +49,7 @@ if ( ($ia_8) && ($_POST["fl"] == "add")) {
 			(($_POST["rtype"] != 'I') && ($cbt == "")) || !isset($_POST["minval"]) || !isset($_POST["minval"])) {
 				$message .= "Не заданы все обязательные параметры (эмитент или группа, список типов бумаг или выпуск, размер ограничений)";
 			} else {			
-				$query = "EXEC [RL_U_AddUpdate] @ClientId = ".$_SESSION["client"].", @CORG = '".$_POST["CORG"]. "', @CORGid = '".$_POST["corg_list"]."'".
+				$query = "EXEC [RL_U_AddUpdate] @ClientId = ".$_SESSION["clientid"].", @CORG = '".$_POST["CORG"]. "', @CORGid = '".$_POST["corg_list"]."'".
 						", @RestrictType = '".$_POST["rtype"]."', @IssueRid = ".($_POST["rtype"] == 'I' ? "'".$_POST["issues_list"]."'" : 'NULL').
 						", @TypesList = ".($_POST["rtype"] == 'I' ? "NULL" : "'".$cbt."'").", @LimitType = '".$_POST["ltype"]."'".
 						", @Min = ".$_POST["minval"].", @Max = ".$_POST["maxval"].
@@ -106,7 +105,7 @@ $query = "SELECT  rl.[id], rl.[ClientId], rl.[CORG], rl.[CORGid], CASE WHEN rl.[
 			,rl.[RestrictType], rl.[IssueRid], CASE WHEN rl.RestrictType = 'I' THEN i.FullName ELSE NULL END AS Issue
 			,rl.[TypesList], rl.[LimitType], rl.[Min], rl.[Max], rl.[NoBuy]
 			FROM [RL_Universal] AS rl LEFT JOIN [_CL_Contragents] AS c ON (c.rid = rl.CORGid)
-			LEFT JOIN [CL_Groups] AS g ON (g.Rid = rl.CORGid) LEFT JOIN [_CL_URL_issues] AS i ON (i.rid = rl.IssueRid) WHERE rl.[ClientId] = ".$_SESSION["client"].
+			LEFT JOIN [CL_Groups] AS g ON (g.Rid = rl.CORGid) LEFT JOIN [_CL_URL_issues] AS i ON (i.rid = rl.IssueRid) WHERE rl.[ClientId] = ".$_SESSION["clientid"].
 			" ORDER BY rl.[CORG], rl.[RestrictType], CORGname, rl.[TypesList], Issue";
 $rlu = array();
 foreach($dbh->query($query) as $row) {
@@ -117,7 +116,7 @@ foreach($dbh->query($query) as $row) {
 }
 
 
-$query = "SELECT [id], [Percent], [MarketValue] FROM [RL_U_CurrPos] WHERE [ClientId] = ".$_SESSION["client"];
+$query = "SELECT [id], [Percent], [MarketValue] FROM [RL_U_CurrPos] WHERE [ClientId] = ".$_SESSION["clientid"];
 foreach($dbh->query($query) as $row) {
 	$rlu[$row["id"]]["Percent"] = $row["Percent"];
 	$rlu[$row["id"]]["MarketValue"] = $row["MarketValue"];

@@ -2,35 +2,46 @@
 
 include("./incl/header.php");
 
-$_SESSION["clientid"] = (isset($_SESSION["clientid"]) ? (isset($_POST["clientid"]) ? $_POST["clientid"] : $_SESSION["clientid"]) : 0);
-$_SESSION["limitid"] = (isset($_SESSION["limitid"]) ? (isset($_POST["limitid"]) ? $_POST["limitid"] : $_SESSION["limitid"]) : 0);
+$ia_2 = is_admin(2); 
+$ia_16 = is_admin(16);
 
-$limits = array();
-foreach($dbh->query("SELECT [Id], [Name] FROM [_CL_CL] ORDER BY [Name]") as $row) {
-	$limits[$row["Id"]] = $row;
+$_SESSION["limitid"] = (isset($_POST["limitid"]) ? $_POST["limitid"] : ($_SESSION["limitid"] ? $_SESSION["limitid"] : 0));
+if ($_POST["cl_lst"]) {
+	$_SESSION["cl_lst"] = $_POST["cl_lst"];
+} else {
+	if (!$_SESSION["cl_lst"]) {
+		$clarr = array(); $i = 0;
+		foreach ($clients as $k=>$v) $clarr[$i++] = $k;
+		$_SESSION["cl_lst"] = $clarr;
+	}
 }
 
-$cl_limits = array();
+$cl_str = "";
+foreach ($_SESSION["cl_lst"] as $k => $v) $cl_str .= ($k == 0 ? "" : ", ").$v;
 
+$cl_limits = array();
+$cl_count = count($_SESSION["cl_lst"]);
 $query = "SELECT [Id], [LimitId], [Name], [ClientCode], [ClientName], [IsActive], [MinValue], [MaxValue], [LowerWarning], [UpperWarning] FROM [_CL_ClientLimits] WHERE ";
-if ( ($_SESSION["clientid"] == 0) && ($_SESSION["limitid"] == 0) ) {
-	$query .= "[IsActive] <> 0 ORDER BY [ClientCode], [Name]";
+if ( ($cl_count > 1) && ($_SESSION["limitid"] == 0) ) {
+	$query .= "[IsActive] <> 0 AND [ClientCode] IN (".$cl_str.") ORDER BY [ClientCode], [Name]";
 } else {
-	if ( ($_SESSION["clientid"] != 0) && ($_SESSION["limitid"] != 0) ) {
-		$query .= "[ClientCode] = ".$_SESSION["clientid"]." AND [LimitId] = ".$_SESSION["limitid"];
+	if ( ($cl_count == 1) && ($_SESSION["limitid"] != 0) ) {
+		$query .= "[ClientCode] IN (".$cl_str.") AND [LimitId] = ".$_SESSION["limitid"];
 	} else {
-		if ($_SESSION["clientid"] != 0) {
-			$query .= "[ClientCode] = ".$_SESSION["clientid"]." ORDER BY [IsActive] desc, [Name]";
+		if ($cl_count == 1) {
+			$query .= "[ClientCode] IN (".$cl_str.") ORDER BY [IsActive] desc, [Name]";
 		} else {
-			$query .= "[LimitId] = ".$_SESSION["limitid"]." ORDER BY [IsActive] desc, [ClientCode]";
+			$query .= "[LimitId] = ".$_SESSION["limitid"]." AND [ClientCode] IN (".$cl_str.") ORDER BY [IsActive] desc, [ClientCode]";
 		}
 	}
 }
 
 $i = 0;
-foreach ($dbh->query($query) as $row) {	$cl_limits[$i++] = $row; }
+foreach ($dbh->query($query) as $row) $cl_limits[$i++] = $row;
 
-
+$smarty->assign("title", "LC3 Checking Limits");
+$smarty->assign("ia_2", $ia_2);
+$smarty->assign("ia_16", $ia_16);
 $smarty->assign("cl_limits", $cl_limits);
 $smarty->assign("limits", $limits);
 $smarty->display("templates/limits.tpl");

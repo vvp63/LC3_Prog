@@ -8,9 +8,7 @@
 	<b>Клиент</b>
 	<select name=client id=client>
 		{foreach from=$clients key=k item=v}
-			{if $k > 0}
-			<option value={$k}{if $k==$smarty.session.client} selected{/if}>{$v.fullname|trim}</option>
-			{/if}
+		<option value={$k}{if $k==$smarty.session.clientid} selected{/if}>{$v.fullname|trim}</option>
 		{/foreach}
 	</select>
 </td>
@@ -34,7 +32,7 @@
 <input type="checkbox" name="fl_hide" id="fl_hide" value="1"{if $smarty.session.fl_hide == "1"} checked{/if}>&nbsp;Скрывать
 &emsp;&emsp;
 </td>
-<td><input type=button class=butt value="Статистика портфеля" onclick="StatOpen({$smarty.session.client})">
+<td><input type=button class=butt value="Статистика портфеля" onclick="StatOpen({$smarty.session.clientid})">
 </td>
 </tr></table>
 </form>

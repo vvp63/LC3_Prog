@@ -2,8 +2,8 @@
 
 include("./incl/header.php");
 
-$_SESSION["client"] = (isset($_SESSION["client"]) ? ($_POST["client"] ? $_POST["client"] : $_SESSION["client"]) : 1);
-$_SESSION["ordby"] = (isset($_SESSION["ordby"]) ? ($_POST["ordby"] ? $_POST["ordby"] : $_SESSION["ordby"]) : "Issuer");
+$_SESSION["clientid"] = ($_POST["client"] ? $_POST["client"] : ($_SESSION["clientid"] ? $_SESSION["clientid"] : 1));
+$_SESSION["ordby"] = ($_POST["ordby"] ? $_POST["ordby"] : ($_SESSION["ordby"] ? $_SESSION["ordby"] : "Issuer") ); 
 $_SESSION["fl_hide"] = ($_POST["fl_hide"] == 1 ? "1" : "0");
 
 $fields = array("ClientCode", "ClientAccount", "SummAsset", "Instrument", "Quantity", "MarketValue", "Percent", "Issuer", "InstrumentName", 
@@ -25,7 +25,7 @@ $ord_var = array("Issuer" => "Эмитенту", "InstrumentType, InstrumentSubt
 $query = "SELECT ";
 foreach ($fields as $k=>$v) $query .= ($v == "Percent" ? "[".$v."]" : $v).", ";
 $query = substr($query, 0, -2);
-$query .= " FROM FT_View WHERE ClientCode = ".$_SESSION["client"]." ORDER BY ".$_SESSION["ordby"];		// My_Model_FT, FT_NoRepo
+$query .= " FROM FT_View WHERE ClientCode = ".$_SESSION["clientid"]." ORDER BY ".$_SESSION["ordby"];		// My_Model_FT, FT_NoRepo
 
 $portf = array(); $i=0;
 foreach($dbh->query($query) as $row) {
