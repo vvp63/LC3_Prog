@@ -5,6 +5,9 @@ include("./incl/header.php");
 $ia_check = is_admin(2) || is_admin(16);
 if (!$ia_check) die("Недостаточно прав для проверки...");
 
+$chmodel = ($_REQUEST["chmodel"]) && is_admin(4);
+$modelft = '##ModelFt_'.$_SESSION["admin"]["id"];
+
 $cl_str = "";
 foreach ($_SESSION["cl_lst"] as $k => $v) $cl_str .= ($k == 0 ? "" : ", ").$v;
 
@@ -32,18 +35,23 @@ foreach ($dbh->query($query) as $row) {
 	$chall[$j++]["limitid"] = $row["LimitId"];
 }
 
+if ($chmodel) $dbh->query("exec [WebModel_PrepareFT] @uid = ".$_SESSION["admin"]["id"]);
+
 foreach ($chall as $k=>$v) {
 	$check_res = array(); $i = 0;
-	foreach($dbh->query("exec CheckLimit @LimitId =".$v["limitid"].", @ClientCode = ".$v["clientid"]) as $row) $check_res[$i++] = $row;
+	$query = ($chmodel ? "exec CheckLimitOnTable @TableName = '".$modelft."', @LimitId =".$v["limitid"].", @ClientCode = ".$v["clientid"] : "exec CheckLimit @LimitId =".$v["limitid"].", @ClientCode = ".$v["clientid"]);
+	foreach($dbh->query($query) as $row) $check_res[$i++] = $row;
 	$chall[$k]["res"] = $check_res;
 	$chall[$k]["reshead"] = arr_head($check_res);
 }
 
-$fg = array("SummAsset", "Percent", "MarketValue", "SumPercent", "SumMarketValue", "LimitValue", "smarketvalue", "spercent", "Price1", "Price2", "Quantity", "SummREPO", "PercentREPO");
+$fg = array("Percent", "SumPercent", "LimitValue", "spercent", "Price1", "Price2", "PercentREPO");
+$fu = array("SummAsset", "MarketValue", "SumMarketValue", "smarketvalue", "Quantity", "SummREPO");
 $fh = array("FailLevel", "LimitValue");
 
-$smarty->assign("title", "LC3 All Limits Check");
+$smarty->assign("title", "LC3 All Limits Check.".($chmodel ? " Model portfolio" : ""));
 $smarty->assign("fg", $fg);
+$smarty->assign("fu", $fu);
 $smarty->assign("fh", $fh);
 $smarty->assign("chall", $chall);
 $smarty->display("templates/check_all.tpl");

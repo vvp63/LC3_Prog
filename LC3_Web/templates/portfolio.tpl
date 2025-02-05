@@ -4,20 +4,34 @@
 <script src="js/portfolio.js"></script>
 
 <form method="POST" id="cl_from"> 
-<table width=100% class=main><tr><td class=client>
+<table width=100% class=main><tr>
+<td class=client>
 	<b>Клиент</b>
 	<select name=client id=client>
+		<option value=0{if $smarty.session.clientid==0} selected{/if}>...Все...</option>
 		{foreach from=$clients key=k item=v}
 		<option value={$k}{if $k==$smarty.session.clientid} selected{/if}>{$v.fullname|trim}</option>
 		{/foreach}
 	</select>
+	&emsp;&emsp;Портфель 
+	<select name=ptype id=ptype>
+		{foreach from=$ptype_lst key=k item=v}
+		<option value="{$k}"{if $smarty.session.ptype == $k} selected{/if}>{$v}</option>
+		{/foreach}
+	</select>
+	&emsp;<input type=button class=butt value="Сделки РЕПО" onclick="RepoOpen({$smarty.session.clientid})">
+</td>
+<td class=scha>
+{if $ia_4}<input type=button class=butt_model value="Портфель >> Модельный" onclick="CopyModel()">
+&emsp;<input type=button class=butt_model value="Модельная сделка" onclick="ModelDeal({$smarty.session.clientid})">
+{/if}
 </td>
 </tr></table>
 <br>
 
 <table width=100% class=main><tr>
 <td class=scha>
-{if $portf|@count > 0}
+{if ($portf|@count > 0) and ($smarty.session.clientid != 0)}
 &emsp;Счет клиента:&nbsp;<b>{$portf.0.ClientAccount}</b>&emsp;СЧА:&nbsp;<b>{$portf.0.SummAsset|string_format:"%d"}</b>&emsp;
 {/if}
 </td>
@@ -46,17 +60,18 @@
 	{/foreach}
 </tr>
 {foreach from=$portf key=k item=v}
-<tr id="lstrows[{$k}]" class=portf{$k % 2}>
+<tr id="lstrows[{$k}]" class={if ($v.InstrumentName)|substr:0:3 == '(M)'}repo{else}portf{/if}{$k % 2}>
 	<td width=10>
 		<input type=hidden id="ftxt[{$k}]" value='{foreach from=$fields key=fk item=fv}{if $fv|in_array:$ffind}{$v.$fv} {/if}{/foreach}'>
+		<input type=hidden id="ismod[{$k}]" value="{if ($v.InstrumentName)|substr:0:3 == '(M)'}1{else}0{/if}">
 	</td>
-	{foreach from=$fields key=fk item=fv}
-	{if not $fv|in_array:$fhide}
-	<td>{if $fv == "Issuer"}<a target="_blank" href="{$sdh_c_lnk}{$v.contrid}">{/if}
-{if $fv|in_array:$fbold}<b>{/if}{if $fv|in_array:$fg}{($v.$fv)|string_format:"%g"}{else}{if $fv|in_array:$fd}{($v.$fv)|date_format:"%Y-%m-%d"}{else}{$v.$fv}{/if}{/if}{if $fv|in_array:$fbold}</b>{/if}
-{if $fv == "Issuer"}</a>{/if}</td>
-	{/if}
-	{/foreach}
+{foreach from=$fields key=fk item=fv}
+{if not $fv|in_array:$fhide}
+	<td>{if $fv == "Issuer"}<a target="_blank" href="{$sdh_c_lnk}{$v.contrid}">{/if}{if $fv|in_array:$fbold}<b>{/if}
+{if $fv|in_array:$fu}{($v.$fv)|string_format:"%u"}{else}{if $fv|in_array:$fg}{($v.$fv)|string_format:"%g"}{else}{if $fv|in_array:$fd}{($v.$fv)|date_format:"%Y-%m-%d"}{else}{$v.$fv}{/if}{/if}{/if}
+{if $fv|in_array:$fbold}</b>{/if}{if $fv == "Issuer"}</a>{/if}</td>
+{/if}
+{/foreach}
 </tr>
 {/foreach}
 </table>

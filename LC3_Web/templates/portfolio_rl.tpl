@@ -15,7 +15,7 @@
 	<td>{$v.Issuer}</td>
 	<td>{$v.InstrumentType}</td>
 	<td>{$v.Quantity}</td>
-	<td>{$v.MarketValue|string_format:"%g"}</td>
+	<td>{$v.MarketValue|string_format:"%d"}</td>
 	<td>{$v.Percent|string_format:"%g"}</td>
 </tr>
 {/foreach}

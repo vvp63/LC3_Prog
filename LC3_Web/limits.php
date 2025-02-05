@@ -3,16 +3,24 @@
 include("./incl/header.php");
 
 $ia_2 = is_admin(2); 
+$ia_4 = is_admin(4); 
 $ia_16 = is_admin(16);
 
 $_SESSION["limitid"] = (isset($_POST["limitid"]) ? $_POST["limitid"] : ($_SESSION["limitid"] ? $_SESSION["limitid"] : 0));
 if ($_POST["cl_lst"]) {
 	$_SESSION["cl_lst"] = $_POST["cl_lst"];
+	$dbh->query("exec WebParam_AddUpdate @user = '".$_SERVER['LOGON_USER']."', @param = 'clntlst', @value = '".serialize($_SESSION["cl_lst"])."'");
 } else {
 	if (!$_SESSION["cl_lst"]) {
-		$clarr = array(); $i = 0;
-		foreach ($clients as $k=>$v) $clarr[$i++] = $k;
-		$_SESSION["cl_lst"] = $clarr;
+		$clntlst = "";
+		foreach ($dbh->query("exec WebParam_Get @user = '".$_SERVER['LOGON_USER']."', @param = 'clntlst'") as $row) $clntlst = $row["value"];
+		if ($clntlst != "") {
+			$_SESSION["cl_lst"] = unserialize($clntlst);
+		} else {
+			$clarr = array(); $i = 0;
+			foreach ($clients as $k=>$v) $clarr[$i++] = $k;
+			$_SESSION["cl_lst"] = $clarr;
+		}
 	}
 }
 
@@ -41,6 +49,7 @@ foreach ($dbh->query($query) as $row) $cl_limits[$i++] = $row;
 
 $smarty->assign("title", "LC3 Checking Limits");
 $smarty->assign("ia_2", $ia_2);
+$smarty->assign("ia_4", $ia_4);
 $smarty->assign("ia_16", $ia_16);
 $smarty->assign("cl_limits", $cl_limits);
 $smarty->assign("limits", $limits);
