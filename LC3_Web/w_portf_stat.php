@@ -34,6 +34,6 @@ $smarty->assign("stat_t", $stat_t);
 $smarty->assign("stat_ts", $stat_ts);
 $smarty->assign("stat_iss", $stat_iss);
 
-$smarty->display("templates/portf_stat.tpl");
+$smarty->display("templates/w_portf_stat.tpl");
 
 ?>

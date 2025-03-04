@@ -36,6 +36,6 @@ $smarty->assign("check_res", $check_res);
 $smarty->assign("check_res_h", arr_head($check_res));
 $smarty->assign("instr_res", $instr_res);
 $smarty->assign("instr_res_h", arr_head($instr_res));
-$smarty->display("templates/check_limit.tpl");
+$smarty->display("templates/w_check_limit.tpl");
 
 ?>

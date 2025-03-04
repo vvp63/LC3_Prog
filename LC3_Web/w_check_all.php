@@ -54,6 +54,6 @@ $smarty->assign("fg", $fg);
 $smarty->assign("fu", $fu);
 $smarty->assign("fh", $fh);
 $smarty->assign("chall", $chall);
-$smarty->display("templates/check_all.tpl");
+$smarty->display("templates/w_check_all.tpl");
 
 ?>

@@ -24,7 +24,7 @@ $smarty->assign("title", "LC3 Add model deal");
 $smarty->assign("ia_4", $ia_4);
 $smarty->assign("res", $res);
 $smarty->assign("clientid", $clientid);
-$smarty->display("templates/modeldeal.tpl");
+$smarty->display("templates/w_modeldeal.tpl");
 
 
 ?>

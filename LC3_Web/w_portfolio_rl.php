@@ -25,6 +25,6 @@ foreach($dbh->query($query) as $row) {
 $smarty->assign("title", "LC3 Portfolio with restrictions. Client ".$clients[$clientid]["fullname"]);
 $smarty->assign("portf", $portf);
 
-$smarty->display("templates/portfolio_rl.tpl");
+$smarty->display("templates/w_portfolio_rl.tpl");
 
 ?>

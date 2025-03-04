@@ -29,7 +29,7 @@ $smarty->assign("clientid", $clientid);
 $smarty->assign("fg", $fg);
 $smarty->assign("fu", $fu);
 
-$smarty->display("templates/repodeals.tpl");
+$smarty->display("templates/w_repodeals.tpl");
 
 
 ?>
