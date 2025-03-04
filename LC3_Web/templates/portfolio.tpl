@@ -21,11 +21,18 @@
 	</select>
 	&emsp;<input type=button class=butt value="Сделки РЕПО" onclick="RepoOpen({$smarty.session.clientid})">
 </td>
+
 <td class=scha>
 {if $ia_4}<input type=button class=butt_model value="Портфель >> Модельный" onclick="CopyModel()">
 &emsp;<input type=button class=butt_model value="Модельная сделка" onclick="ModelDeal({$smarty.session.clientid})">
 {/if}
 </td>
+<td class=client>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class=scha>
+	<input type=button id="rfbt" class="butt_chall" value="Обновить" onclick="PortfolioRefresh()">&emsp;
+	<input type=button class="butt_model" value="Предупреждения" onclick="PortfolioWarnings()">
+</td>
+
 </tr></table>
 <br>
 

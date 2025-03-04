@@ -4,20 +4,26 @@ include("./incl/header.php");
 
 $clientid = $_REQUEST["clientid"];
 
+if ($clientid > 0) {
+	$condition = "WHERE ClientCode = ".$clientid;
+} else {
+	$condition = "";
+}
+
 $query = "SELECT t.* FROM (SELECT InstrumentType, SUM(MarketValue) AS sMarketValue, SUM([Percent]) AS sPercent
-				FROM FT_View WHERE ClientCode = ".$clientid." GROUP BY InstrumentType) AS t ORDER BY t.sPercent DESC";
+				FROM FT_View ".$condition." GROUP BY InstrumentType) AS t ORDER BY t.sPercent DESC";
 $stat_t = array(); $i=0;
 foreach($dbh->query($query) as $row) {	$stat_t[$i++] = $row;}
 
 $query = "SELECT t.* FROM (SELECT InstrumentType, InstrumentSubtype, SUM(MarketValue) AS sMarketValue, SUM([Percent]) AS sPercent 
-				FROM FT_View WHERE ClientCode = ".$_SESSION["client"]." GROUP BY InstrumentType, InstrumentSubtype) AS t ORDER BY t.sPercent DESC";
+				FROM FT_View ".$condition." GROUP BY InstrumentType, InstrumentSubtype) AS t ORDER BY t.sPercent DESC";
 
 $stat_ts = array(); $i=0;
 foreach($dbh->query($query) as $row) {	$stat_ts[$i++] = $row;}
 
 
 $query = "SELECT t.* FROM (SELECT Issuer, contrid, SUM(MarketValue) AS sMarketValue, SUM([Percent]) AS sPercent
-				FROM FT_View WHERE ClientCode = ".$clientid." GROUP BY Issuer, contrid) AS t ORDER BY t.sPercent DESC";
+				FROM FT_View ".$condition." GROUP BY Issuer, contrid) AS t ORDER BY t.sPercent DESC";
 
 $stat_iss = array(); $i=0;
 foreach($dbh->query($query) as $row) {	$stat_iss[$i++] = $row;}

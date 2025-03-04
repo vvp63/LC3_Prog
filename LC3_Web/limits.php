@@ -47,12 +47,16 @@ if ( ($cl_count > 1) && ($_SESSION["limitid"] == 0) ) {
 $i = 0;
 foreach ($dbh->query($query) as $row) $cl_limits[$i++] = $row;
 
+$slunread = 0;
+foreach ($dbh->query("exec SL_GetUnreaded") as $row) $slunread = 1;
+
 $smarty->assign("title", "LC3 Checking Limits");
 $smarty->assign("ia_2", $ia_2);
 $smarty->assign("ia_4", $ia_4);
 $smarty->assign("ia_16", $ia_16);
 $smarty->assign("cl_limits", $cl_limits);
 $smarty->assign("limits", $limits);
+$smarty->assign("slunread", $slunread);
 $smarty->display("templates/limits.tpl");
 
 ?>

@@ -82,3 +82,27 @@ function ModelDeal(clientid) {
 	var link = './modeldeal.php?clientid=' + clientid;
 	window.open(link, "_blank", "left=300, top=100, width=900, height=500");
 }
+
+function PortfolioWarnings() {
+	var link = './portfwarnings.php';
+	window.open(link, "_blank", "left=300, top=100, width=1200, height=800");
+}
+
+function PortfolioRefresh() {
+	if (confirm("Вы уверены, что хотите обновить портфель?")) {
+		document.getElementById("rfbt").value = '...Ждите...';
+		document.getElementById("rfbt").disabled = true;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function() {
+			if (this.readyState==4 && this.status==200) {
+				alert(this.responseText);
+				document.getElementById("rfbt").value = 'Обновить';
+				document.getElementById("rfbt").disabled = false;
+				PortfolioWarnings();
+			}
+		}
+		xmlhttp.open("POST", "./portfrefresh.php", true);
+		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xmlhttp.send('');			
+	}
+}

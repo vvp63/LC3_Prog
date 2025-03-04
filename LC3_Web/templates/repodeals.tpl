@@ -1,6 +1,5 @@
 {include file="header.tpl"}
 
-
 <table class=portfrl>
 <tr>
 {foreach from=$repodeals_h key=kh item=vh}<td class=portftop>{$vh}</td>{/foreach}
@@ -13,7 +12,6 @@
 </tr>
 {/foreach}
 </table>
-
 
 <br><br>
 <center>

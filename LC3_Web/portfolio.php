@@ -8,7 +8,7 @@ $modelft = '##ModelFt_'.$_SESSION["admin"]["id"];
 
 $ptype_lst = array("FT_View" => "Полный", "FT_NoRepo" => "Без РЕПО", $modelft => "Модельный");
 
-$_SESSION["clientid"] = (isset($_POST["client"]) ? $_POST["client"] : ($_SESSION["clientid"] ? $_SESSION["clientid"] : 0));
+$_SESSION["clientid"] = (isset($_POST["client"]) ? $_POST["client"] : ($_SESSION["clientid"] ? $_SESSION["clientid"] : 1));
 $_SESSION["ptype"] = ($_POST["ptype"] ? $_POST["ptype"] : ($_SESSION["ptype"] ? $_SESSION["ptype"] : "FT_View"));
 $_SESSION["ordby"] = ($_POST["ordby"] ? $_POST["ordby"] : ($_SESSION["ordby"] ? $_SESSION["ordby"] : "Issuer") ); 
 $_SESSION["fl_hide"] = ($_POST["fl_hide"] == 1 ? "1" : "0");
@@ -39,9 +39,7 @@ $query = substr($query, 0, -2)." FROM ".$_SESSION["ptype"];
 $query .= ( ($_SESSION["clientid"] > 0) ? " WHERE ClientCode = ".$_SESSION["clientid"] : "")." ORDER BY ".(($_SESSION["clientid"] == 0) ? "ClientCode, ": "").$_SESSION["ordby"];		// My_Model_FT, FT_NoRepo
 
 $portf = array(); $i=0;
-foreach($dbh->query($query) as $row) {
-	$portf[$i++] = $row;
-}
+foreach($dbh->query($query) as $row) { $portf[$i++] = $row; }
 
 $smarty->assign("title", "LC3 Clients Portfolio");
 $smarty->assign("ia_4", $ia_4);

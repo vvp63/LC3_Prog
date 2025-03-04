@@ -7,7 +7,7 @@
 <table class=main>
 <tr>
 	<td class=rlsubtop>Клиент<br>
-	<select name="cl_lst[]" id="clientid" multiple size=5>
+	<select name="cl_lst[]" id="clientid" multiple class=clnts size=7>
 		{foreach from=$clients key=k item=v}
 		<option value={$k}{if $k|in_array:$smarty.session.cl_lst} selected{/if}>{$v.fullname|trim}</option>
 		{/foreach}
@@ -28,7 +28,10 @@
 	<td class=rlsubtop>Нижний предел</td>
 	<td class=rlsubtop>Верхний предел</td>
 	<td class=rlsubtop>Макс. значение</td>
-	<td class=rlsubtop>Проверка<br><br>{if $ia_2 || $ia_16}<input type="button" class="butt_chall" value="Check All" onclick="CheckAll()">{/if}</td>
+	<td class=rlsubtop><center>Проверка<br><br>
+	{if $ia_2 || $ia_16}<input type="button" class={if $slunread == 0}"butt_model"{else}"butt_sl"{/if} value="5% limit" onclick="Open5Perc()">
+	<br><br><input type="button" class="butt_chall" value="Check All" onclick="CheckAll()">{/if}
+	</center></td>
 </tr>
 {foreach from=$cl_limits key=k item=v}
 <tr class=rllist{if $v.IsActive != 1}_na{else}{$k % 2}{/if}>
