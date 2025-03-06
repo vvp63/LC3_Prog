@@ -235,6 +235,6 @@
 	}
 	
 	function PortfOpen(clientid, rlrid) {
-		var link = './portfolio_rl.php?clientid=' + clientid + '&rlrid=' + rlrid;
+		var link = './w_portfolio_rl.php?clientid=' + clientid + '&rlrid=' + rlrid;
 		window.open(link, "_blank", "left=50, top=20, width=1500, height=900");
 	}

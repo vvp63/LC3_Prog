@@ -55,12 +55,12 @@ function FilteredPortf() {
 }
 
 function StatOpen(clientid) {
-	var link = './portf_stat.php?clientid=' + clientid;
+	var link = './w_portf_stat.php?clientid=' + clientid;
 	window.open(link, "_blank", "left=50, top=20, width=1500, height=900");
 }
 
 function RepoOpen(clientid) {
-	var link = './repodeals.php?clientid=' + clientid;
+	var link = './w_repodeals.php?clientid=' + clientid;
 	window.open(link, "_blank", "left=50, top=20, width=1500, height=900");
 }	
 
@@ -79,12 +79,12 @@ function CopyModel() {
 }
 
 function ModelDeal(clientid) {
-	var link = './modeldeal.php?clientid=' + clientid;
+	var link = './w_modeldeal.php?clientid=' + clientid;
 	window.open(link, "_blank", "left=300, top=100, width=900, height=500");
 }
 
 function PortfolioWarnings() {
-	var link = './portfwarnings.php';
+	var link = './w_portfwarnings.php';
 	window.open(link, "_blank", "left=300, top=100, width=1200, height=800");
 }
 
@@ -101,7 +101,7 @@ function PortfolioRefresh() {
 				PortfolioWarnings();
 			}
 		}
-		xmlhttp.open("POST", "./portfrefresh.php", true);
+		xmlhttp.open("POST", "./s_portfrefresh.php", true);
 		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		xmlhttp.send('');			
 	}

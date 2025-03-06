@@ -50,13 +50,18 @@ function SaveCh(clid, limid) {
 }
 
 function CheckLimit(clid, limid) {
-	let link = './check_limit.php?clientid=' + clid + '&limitid=' + limid;
+	let link = './w_check_limit.php?clientid=' + clid + '&limitid=' + limid;
 	if (document.getElementById("ch_model").checked) link = link + '&chmodel=1';
 	window.open(link, "_blank", "left=50, top=20, width=1600, height=900");
 }
 
 function CheckAll() {
-	let link = './check_all.php';
+	let link = './w_check_all.php';
 	if (document.getElementById("ch_model").checked) link = link + '?chmodel=1';
 	window.open(link, "_blank", "left=50, top=20, width=1600, height=900");
+}
+
+function Open5Perc() {
+	let link = './w_slcheck.php';
+	window.open(link, "_blank", "left=50, top=20, width=900, height=900");
 }
