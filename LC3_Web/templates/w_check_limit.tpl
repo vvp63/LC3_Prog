@@ -2,6 +2,8 @@
 
 <b class=limcl >Лимит {$limits.$limitid.Name}. Клиент {$clients.$clientid.fullname}.<br><br></b>
 
+<div style="display: inline-block; height: 88%; width: 100%; overflow-y: auto;">
+
 {assign var="maxfl" value="0"}
 {assign var="maxlv" value="0"}
 <table class=checkres>
@@ -43,6 +45,8 @@
 </tr>
 {/foreach}
 </table>
+
+</div>
 
 <br><br>
 <center>

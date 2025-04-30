@@ -1,5 +1,7 @@
 {include file="header.tpl"}
 
+<div style="display: inline-block; height: 92%; width: 100%; overflow-y: auto;">
+
 <table width=100% class=portfrl>
 <tr>
 	<td class=portftop>Инструмент</td>
@@ -20,6 +22,9 @@
 </tr>
 {/foreach}
 </table>
+
+</div>
+
 <br><br>
 <center>
 <input type=button class=butt value="Закрыть окно" onclick="window.close()">

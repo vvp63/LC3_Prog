@@ -1,5 +1,7 @@
 {include file="header.tpl"}
 
+<div style="display: inline-block; height: 92%; width: 100%; overflow-y: auto;">
+
 {foreach from=$chall key=kca item=vca}
 	{assign var="limitid" value=$vca.limitid}
 	{assign var="clientid" value=$vca.clientid}
@@ -35,6 +37,7 @@
 	</script>	
 {/foreach}
 
+</div>
 
 <br><br>
 <center>

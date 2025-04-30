@@ -27,7 +27,7 @@ $fhide = array("contrid", "QuoteSDH", "QuoteSDHAgo", "ID_CB_SDH", "SecurityId", 
 if ($_SESSION["clientid"] > 0) array_push($fhide, "ClientCode", "ClientAccount", "SummAsset");
 $fbold = array("Quantity", "MarketValue", "Percent");
 $fg = array("Percent");
-$fu = array("SummAsset", "MarketValue", "BondsIssueSumm", "VolCirculation", "AnnouncedVol", "MonthAvgVol");
+$fu = array("Quantity", "SummAsset", "MarketValue", "BondsIssueSumm", "VolCirculation", "AnnouncedVol", "MonthAvgVol");
 $fd = array("RedemptionDate", "DateStartPlacing", "DateEndPlacing");
 $ffind = array("Instrument", "Issuer", "InstrumentName", "CB_Code",	"StateRegNum");
 

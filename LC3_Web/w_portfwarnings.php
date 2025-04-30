@@ -10,10 +10,10 @@ $check_res = array(); $i = 0;
 $query = "exec CheckWarning";
 foreach($dbh->query($query) as $row) $check_res[$i++] = $row;
 
-$fu = array("SummAsset", "MarketValue", "SumMarketValue", "smarketvalue", "Quantity", "SummREPO");
+$fd = array("SummAsset", "MarketValue", "SumMarketValue", "smarketvalue", "Quantity", "SummREPO");
 
 $smarty->assign("title", "LC3 Portfolio Warnings");
-$smarty->assign("fu", $fu);
+$smarty->assign("fd", $fd);
 $smarty->assign("check_res", $check_res);
 $smarty->assign("check_res_h", arr_head($check_res));
 $smarty->display("templates/w_portfwarnings.tpl");

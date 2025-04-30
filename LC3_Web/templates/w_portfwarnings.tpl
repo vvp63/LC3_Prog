@@ -9,7 +9,7 @@
 {foreach from=$check_res key=k item=v}
 <tr>
 {foreach from=$check_res_h key=kh item=vh}
-	<td>{if $vh|in_array:$fu}{($v.$vh)|string_format:"%u"}{else}{$v.$vh}{/if}</td>
+	<td>{if $vh|in_array:$fd}{($v.$vh)|string_format:"%d"}{else}{$v.$vh}{/if}</td>
 {/foreach}
 </tr>
 {/foreach}

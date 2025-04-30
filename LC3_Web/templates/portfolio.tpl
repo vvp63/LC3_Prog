@@ -7,14 +7,14 @@
 <table width=100% class=main><tr>
 <td class=client>
 	<b>Клиент</b>
-	<select name=client id=client>
+	<select name=client id=client disabled>
 		<option value=0{if $smarty.session.clientid==0} selected{/if}>...Все...</option>
 		{foreach from=$clients key=k item=v}
 		<option value={$k}{if $k==$smarty.session.clientid} selected{/if}>{$v.fullname|trim}</option>
 		{/foreach}
 	</select>
 	&emsp;&emsp;Портфель 
-	<select name=ptype id=ptype>
+	<select name=ptype id=ptype disabled>
 		{foreach from=$ptype_lst key=k item=v}
 		<option value="{$k}"{if $smarty.session.ptype == $k} selected{/if}>{$v}</option>
 		{/foreach}
@@ -39,11 +39,11 @@
 <table width=100% class=main><tr>
 <td class=scha>
 {if ($portf|@count > 0) and ($smarty.session.clientid != 0)}
-&emsp;Счет клиента:&nbsp;<b>{$portf.0.ClientAccount}</b>&emsp;СЧА:&nbsp;<b>{$portf.0.SummAsset|string_format:"%d"}</b>&emsp;
+&emsp;Счет клиента:&nbsp;<b>{$portf.0.ClientAccount}</b>&emsp;СЧА:&nbsp;<b>{$portf.0.SummAsset|number_format:0:"":" "}</b>&emsp;
 {/if}
 </td>
 <td class=flt>Сортировка по:&nbsp; 
-	<select name="ordby" id="ordby">
+	<select name="ordby" id="ordby" disabled>
 		{foreach from=$ord_var key=k item=v}
 		<option value="{$k}"{if $k==$smarty.session.ordby} selected{/if}>{$v}</option>
 		{/foreach}
@@ -61,10 +61,10 @@
 <input type=hidden id="p_count" value="{$portf|@count}">
 <table width=100% class=portfrl>
 <tr>
-	<td width=10></td>
-	{foreach from=$fields key=k item=v}
-	{if not $v|in_array:$fhide}<td class=portftop>{$v}</td>{/if}
-	{/foreach}
+<td width=10></td>
+{foreach from=$fields key=k item=v}
+{if not $v|in_array:$fhide}<td class=portftop>{$v}</td>{/if}
+{/foreach}
 </tr>
 {foreach from=$portf key=k item=v}
 <tr id="lstrows[{$k}]" class={if ($v.InstrumentName)|substr:0:3 == '(M)'}repo{else}portf{/if}{$k % 2}>
@@ -74,8 +74,8 @@
 	</td>
 {foreach from=$fields key=fk item=fv}
 {if not $fv|in_array:$fhide}
-	<td>{if $fv == "Issuer"}<a target="_blank" href="{$sdh_c_lnk}{$v.contrid}">{/if}{if $fv|in_array:$fbold}<b>{/if}
-{if $fv|in_array:$fu}{($v.$fv)|string_format:"%u"}{else}{if $fv|in_array:$fg}{($v.$fv)|string_format:"%g"}{else}{if $fv|in_array:$fd}{($v.$fv)|date_format:"%Y-%m-%d"}{else}{$v.$fv}{/if}{/if}{/if}
+	<td{if $fv|in_array:$fu} class=num{/if}>{if $fv == "Issuer"}<a target="_blank" href="{$sdh_c_lnk}{$v.contrid}">{/if}{if $fv|in_array:$fbold}<b>{/if}
+{if $fv|in_array:$fu}{($v.$fv)|number_format:0:"":" "}{else}{if $fv|in_array:$fg}{($v.$fv)|string_format:"%.4g"}{else}{if $fv|in_array:$fd}{($v.$fv)|date_format:"%Y-%m-%d"}{else}{$v.$fv}{/if}{/if}{/if}
 {if $fv|in_array:$fbold}</b>{/if}{if $fv == "Issuer"}</a>{/if}</td>
 {/if}
 {/foreach}

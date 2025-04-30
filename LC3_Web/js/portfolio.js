@@ -1,7 +1,11 @@
 $(function() {
+	
+	$('#client').prop("disabled", false);
+	$('#ptype').prop("disabled", false);
+	$('#ordby').prop("disabled", false);
 
 	FilteredPortf();
-
+	
 	$('#client').on('change', function(){
 		$('#cl_from').submit();
 	});
