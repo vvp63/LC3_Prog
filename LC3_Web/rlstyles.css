@@ -55,5 +55,7 @@ b.limcl {font-size: 14; color: #303010;}
 tr.modpos {vertical-align: middle; padding: 2px; margin: 1px;  background-color: #D0F9E0; white-space: nowrap;}
 
 td.num {text-align: right; padding-right: 10}
+td.nowrp {text-wrap: wrap;}
 
 u.del {color: #C03030; font-weight: bold;}
+.liminp {font-size: 14px; width: 400px;}
