@@ -57,7 +57,11 @@ function DeleteObj(limid, objid, objname) {
 	}
 }	
 
+
+
 </script>
+
+
 
 
 <table style='height: 90%; width: 100%; border: 2px solid #C0C0F0; margin: 1 px; padding: 1px;'>
@@ -148,22 +152,120 @@ function DeleteObj(limid, objid, objname) {
 <td style='width: 100%; vertical-align: top; padding-left: 20px;'>
 
 {if $objid > 0}
-<table>
+
+<form action='./lim_set.php?limid={$limid}&objid={$objid}' method=post id=set_form>
+<input type=hidden name=action_set value='addupd_set'>
+
+<style type="text/css">
+.dropdown { position: relative; display: inline-block; }
+.dropdown-inp { background-color: #F9F9FF; color: #000030; padding: 1px; width: 500px; }
+.dropdown-content { display: none; position: absolute; margin-left: 2px; margin-top: -18px; background-color: #d0d0f0; min-width: 460px; z-index: 1; padding: 5px;}
+.ddbtn { cursor: pointer; width: 22px; heigth: 20px; font-weight: bold; }
+</style>
+
+<script>
+
+function HideAll() {
+	const allparams = [{foreach from=$params key=k item=v}{if $v.ListTable != ""}'{$v.ColumnName}'{else}''{/if}{if $v@last}{else}, {/if}{/foreach}];
+	allparams.forEach((vp) => {
+		if (vp != '') {
+			var rid = 'div_' + vp;
+			var hid = 'hid_' + vp;
+			var bid = 'btn_' + vp;
+			document.getElementById(rid).style.display='none';
+			document.getElementById(hid).value='0';
+			document.getElementById(bid).value='>';				
+		}
+	})
+}
+
+function ClickArrow(vparam) {
+	var rid = 'div_' + vparam;
+	var hid = 'hid_' + vparam;
+	var bid = 'btn_' + vparam;
+	if (document.getElementById(hid).value=='0') {
+		HideAll();
+		document.getElementById(rid).style.display='block';
+		document.getElementById(hid).value='1';
+		document.getElementById(bid).value='^';
+	} else {
+		document.getElementById(rid).style.display='none';
+		document.getElementById(hid).value='0';
+		document.getElementById(bid).value='>';
+	}
+}
+
+function FillInpVal(pid) {
+	var cidpref = 'valarr_' + pid + '_';
+	var cnt = 'vac_' + pid;
+	var inp = 'vallst_' + pid;
+	var res = "";
+	for (let i = 1; i <= document.getElementById(cnt).value; i++) {
+		var cid = cidpref + i;
+		if (document.getElementById(cid).checked) {
+			res = res + "'" + document.getElementById(cid).value + "' ,";
+		}
+	}
+	document.getElementById(inp).value = res.slice(0, -2);
+}
+
+function ParamUsed(pid) {
+	var trid = 'param_' + pid;
+	var rid = 'rel_' + pid;
+	if (document.getElementById(rid).value != "") {
+		document.getElementById(trid).className = "set1";
+	} else {
+		document.getElementById(trid).className = "set0";
+	}
+}
+
+</script>
+
+<table class=set>
 {foreach from=$params key=k item=v}
-<tr>
+<tr class=set{if $conditions.$k.Relation <> ''}1{else}0{/if} id=param_{$k}>
 <td>{$v.Name}</td>
 <td>
+<select name=relation[{$k}] id=rel_{$k} value="" onchange="ParamUsed({$k})">
+<option value="">не задано</option>
 {if $v.ListTable == ""}
-<input type=text>
+<option value="="{if $conditions.$k.Relation == '='} selected{/if}>=</option>
+<option value=">"{if $conditions.$k.Relation == '>'} selected{/if}>&gt;</option>
+<option value="<"{if $conditions.$k.Relation == '<'} selected{/if}>&lt;</option>
+<option value="<>"{if $conditions.$k.Relation == '<>'} selected{/if}>&lt;&gt;</option>
 {else}
-<select>
-<option>...</option>
-{foreach from=$v.plst key=ko item=vo}<option>{$vo.Name}</option>{/foreach}
-</select>
+<option value="IN"{if $conditions.$k.Relation == 'IN'} selected{/if}>равно</option>
+<option value="NOT IN"{if $conditions.$k.Relation == 'NOT IN'} selected{/if}>не равно</option>
 {/if}
-</td></tr>
+</select>
+</td>
+<td>
+{if $v.ListTable == ""}
+<input type=text class="dropdown-inp" value="{$conditions.$k.ValuesList}" name=valueslist[{$k}] style='background-color: #FDFDFF;'>
+{else}
+<div class="dropdown">
+  <input type=text disabled class="dropdown-inp"  value="{$conditions.$k.ValuesList}" name=valueslist[{$k}] id=vallst_{$k}>&nbsp;
+  <input type=button value=">" class="ddbtn" id="btn_{$v.ColumnName}" onclick="ClickArrow('{$v.ColumnName}')">
+  <input type=hidden value=0  id="hid_{$v.ColumnName}">
+  <div class="dropdown-content" id="div_{$v.ColumnName}">
+	{foreach from=$v.plst key=ko item=vo}
+	<input type="checkbox" id=valarr_{$k}_{$vo@iteration} name=valarr[{$k}][] value={$vo.Value}{if ($vo.Value)|in_array:$conditions.$k.ValArr} checked{/if} onclick="FillInpVal({$k})">{$vo.Name}<br>
+	{/foreach}
+	<input type=hidden value={$v.plst|count} id="vac_{$k}">
+  </div>
+</div>
+{/if}
+</td>
+<td>
+<input type=checkbox name=includenull[{$k}]{if $conditions.$k.IncludeNull == 1} checked{/if} value=1>&nbsp;Включая пустые
+</td>
+</tr>
 {/foreach}
 </table>
+<br>
+<input type=submit value="Сохранить" class=butt>
+</form>
+
 {/if}
 
 &nbsp;

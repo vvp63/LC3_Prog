@@ -59,3 +59,7 @@ td.nowrp {text-wrap: wrap;}
 
 u.del {color: #C03030; font-weight: bold;}
 .liminp {font-size: 14px; width: 400px;}
+
+table.set {border: 1px solid #E8E8FF; margin: 1 px; padding: 1px; font-size: 13px;}
+tr.set0 {vertical-align: middle; padding: 1px; margin: 1px; background-color: #F9F9FD; white-space: nowrap;}
+tr.set1 {vertical-align: middle; padding: 1px; margin: 1px;  background-color: #D9D9EA; white-space: nowrap;}
