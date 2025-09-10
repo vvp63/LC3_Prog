@@ -32,6 +32,7 @@ if (($_POST["action"] == "del_cl") && ($ia_32)) {
 if (($_POST["action_obj"] == "del_obj") && ($ia_32)) {
 	$query = "exec CL_DeleteObject @ObjectId = ".$_POST["objid"];
 	$dbh->query($query);
+	$dbh->query("EXEC [CL_FormCondition] @LimitId = ".$limid);
 	$objid = 0;
 }
 
