@@ -1,6 +1,8 @@
 {include file="header.tpl"}
 {include file="top_menu.tpl"}
 
+{if $ia_32 == 1}
+
 <script src="js/lim_set.js"></script>
 
 <script>
@@ -29,6 +31,7 @@ function HideAll() {
 <td style='width: 430px; vertical-align: top;'>
 	<input type=hidden id="l_count" value="{$limits|@count}">
 	<div style="display: inline-block; height: 700px; width: 420px; overflow-y: auto;" id=grpdiv>
+	{if not $limid|in_array:$limits.Id}<input type=hidden id=tdact>{/if}
 	<table class=portfrl style='width: 400px;'>
 	<tr>
 	<td class=portftop>Номер</td>
@@ -167,5 +170,9 @@ function HideAll() {
 </td>
 
 </tr></table>
+
+{else}
+А вам сюда нельзя...
+{/if}
 
 {include file="footer.tpl"}

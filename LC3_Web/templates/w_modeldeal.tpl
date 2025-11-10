@@ -38,13 +38,14 @@ function AddSubm() {
 <tr>
 <td class=client colspan=2>Клиент: <b>{$clients.$clientid.fullname}<b></td>
 </tr>
-<tr>
-<td class=client colspan=2>
+<tr><td class=client colspan=2>
 	Инструмент: <input type=text id="search_txt" class=srch onkeyup="FindInstr(this.value)" style='width: 700px'><br>
 	<select name="instr_list" id="instr_list" class=slct style='width: 820px'>
 	</select>
-</td>
-</tr>
+</td></tr>
+<tr class=restricted><td class=checkres colspan=2>
+Количество и объем - на сколько увеличиваем Quantity и MarketValue инструмента в портфеле. Если сделка на покупку - положительные величины, если на продажу - отрицательные.
+</td></tr>
 <tr>
 <td class=client>Количество <input type=text id="quantity" name="quantity" class=srch style='width: 200px'></td>
 <td class=client>Объем <input type=text id="value" name="value" class=srch style='width: 200px'></td>

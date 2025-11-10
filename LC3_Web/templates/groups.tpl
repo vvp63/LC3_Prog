@@ -16,6 +16,7 @@
 	<b>Группы</b><br>
 	{if $actres == 1}Добавлена группа "{$newgrpname}"<br>{/if}
 	<div style="display: inline-block; height: 700px; width: 600px; overflow-y: auto;" id=grpdiv>
+	{if not $grid|in_array:$groups.Id}<input type=hidden id=tdact>{/if}
 	<table class=portfrl>
 	<tr>
 	<td class=portftop>Номер</td>

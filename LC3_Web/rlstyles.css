@@ -47,7 +47,7 @@ td.checktop { font-weight: bold; margin: 1 px; padding: 1px; background-color: #
 td.res_ok {background-color: #40CF40; text-align: center; width: 50px; }
 td.res_warn {background-color: #C0C040; text-align: center; width: 50px; }
 td.res_err {background-color: #CF4040; text-align: center; width: 50px; }
-b.limcl {font-size: 14; color: #303010;}
+b.limcl {font-size: 14px; color: #303010;}
 .limval {width: 100px;}
 .butt_chall {font-size: 18px; padding: 5px; background-color: #C0E9C0; border: 2px solid #80C080; font-color: #105010; cursor: pointer; font-weight: bold;}
 .butt_model {font-size: 18px; padding: 5px; background-color: #F9F9FF; border: 1px solid #A0A0E0; font-color: #101030; cursor: pointer;}
