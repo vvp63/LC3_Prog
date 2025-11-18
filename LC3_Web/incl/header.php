@@ -18,7 +18,8 @@ foreach($dbh->query("SELECT [Id], [Value], [Name] FROM [dbo].[CLlst_Types] ORDER
 $menu = array(  "/limits.php" => "Ограничения", 
 				"/portfolio.php" => "Портфели клиентов",
 				"/rl_universal.php" => "Лимитная ведомость",
-				"/groups.php" => "Группы",
+				"/groups.php" => "Группы эмитентов",
+				"/iss_groups.php" => "Группы выпусков",
 				"/lim_set.php" => "Настройки лимитов"
             );
 	

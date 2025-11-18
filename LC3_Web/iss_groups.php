@@ -38,7 +38,7 @@ foreach ($dbh->query("SELECT [Id],[Rid],[GroupName] FROM [CL_Iss_Groups]") as $r
 $grpcont = array(); $i = 0;
 if ($grid != 0) {
 	$query = "SELECT gc.[GroupId], gc.[issueid], c.[name], iss.[emitents_id], iss.[FullName] FROM [CL_Iss_GroupsContent] AS gc
-		LEFT JOIN [_CL_URL_issues] AS iss ON (gc.issueid = iss.rid)	LEFT JOIN [_CL_Contragents] AS c ON (iss.emitents_id = c.rid) WHERE gc.GroupId = ".$grid;
+		LEFT JOIN [_CL_URL_issues] AS iss ON (gc.issueid = iss.rid)	LEFT JOIN [_CL_Contragents] AS c ON (iss.emitents_id = c.rid) WHERE gc.GroupId = ".$grid." ORDER BY iss.[FullName]";
 	foreach ($dbh->query($query) as $row) $grpcont[$i++] = $row;
 }
 

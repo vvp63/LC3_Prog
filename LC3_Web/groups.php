@@ -36,7 +36,8 @@ foreach ($dbh->query("SELECT [Id],[Rid],[GroupName] FROM [CL_Groups]") as $row) 
 
 $grpcont = array(); $i = 0;
 if ($grid != 0) {
-	$query = "SELECT gc.[GroupId], gc.[contrid], ISNULL(c.[name], '&nbsp;') AS cname FROM [CL_GroupsContent] AS gc LEFT JOIN [Cache_Contragents] AS c ON (gc.contrid = c.rid) WHERE gc.GroupId = ".$grid;
+	$query = "SELECT gc.[GroupId], gc.[contrid], ISNULL(c.[name], '&nbsp;') AS cname FROM [CL_GroupsContent] AS gc 
+				LEFT JOIN [Cache_Contragents] AS c ON (gc.contrid = c.rid) WHERE gc.GroupId = ".$grid." ORDER BY c.[name]";
 	foreach ($dbh->query($query) as $row) $grpcont[$i++] = $row;
 }
 
