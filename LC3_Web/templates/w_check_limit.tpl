@@ -8,7 +8,11 @@
 {assign var="maxlv" value="0"}
 <table class=checkres>
 <tr>
-{foreach from=$check_res_h key=kh item=vh}{if not $vh|in_array:$fh}<td class=checktop>{$vh}</td>{/if}{/foreach}
+{foreach from=$check_res_h key=kh item=vh}{if not $vh|in_array:$fh}
+<td class=checktop><nobr>{$vh}
+{if $vh|in_array:$sra}
+<a target=_self class=updown href="w_check_limit.php?clientid={$clientid}&limitid={$limitid}&sort={$vh}">|{if {$smarty.session.sort == $vh} && ($smarty.session.desc == 1) }&or;{else}&and;{/if}|</a>
+{/if}</nobr></td>{/if}{/foreach}
 <td class=checktop>&nbsp;</td>
 </tr>
 {foreach from=$check_res key=k item=v}

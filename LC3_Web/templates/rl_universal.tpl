@@ -141,11 +141,10 @@
 {if $ia_8}
 Скопировать отмеченные на клиента 
 <select name="copytocl" id="copytocl" class=slct>
-	{foreach from=$clients key=k item=v}
-		{if $k > 0}
-		<option value={$k}{if $k==$smarty.session.clientid} disabled{/if}>{$v.fullname}</option>
-		{/if}
-	{/foreach}
+{foreach from=$clients key=k item=v}
+	{if $k > 0}<option value={$k}{if $k==$smarty.session.clientid} disabled{/if}>{$v.fullname|trim}</option>
+	{/if}
+{/foreach}
 </select>
 <input type=button value="Копировать" class=butt id="copy_all">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
