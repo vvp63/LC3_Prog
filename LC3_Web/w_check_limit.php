@@ -47,8 +47,8 @@ $instr_res = array(); $i = 0;
 $query = "exec OpenLimitByInstruments @LimitId =".$limitid.", @ClientCode = ".$clientid.($chmodel ? ", @TableName = '".$modelft."'" : "");
 foreach($dbh->query($query) as $row) $instr_res[$i++] = $row;
 
-$fg = array("Percent", "SumPercent", "LimitValue", "spercent", "Price1", "Price2", "PercentREPO");
-$fu = array("SummAsset", "MarketValue", "SumMarketValue", "smarketvalue", "Quantity", "SummREPO");
+$fg = array("Percent", "SumPercent", "LimitValue", "spercent", "Price1", "Price2", "PercentREPO", "CapPercent");
+$fu = array("SummAsset", "MarketValue", "SumMarketValue", "smarketvalue", "Quantity", "SummREPO", "SumValue", "Capitalization");
 $fh = array("FailLevel", "LimitValue");
 $sra = array("Issuer", "smarketvalue", "spercent", "smarketvalue", "SumMarketValue", "SumPercent", "InstrumentName");
 

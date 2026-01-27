@@ -31,21 +31,20 @@ function HideAll() {
 <td style='width: 430px; vertical-align: top;'>
 	<input type=hidden id="l_count" value="{$limits|@count}">
 	<div style="display: inline-block; height: 700px; width: 420px; overflow-y: auto;" id=grpdiv>
-	{if not $limid|in_array:$limits.Id}<input type=hidden id=tdact>{/if}
+	{if $limid == 0}<input type=hidden id=tdact>{/if}
 	<table class=portfrl style='width: 400px;'>
 	<tr>
 	<td class=portftop>Номер</td>
 	<td class=portftop>Лимит <input type=text id=fndtxt onkeyup="FindLim()"></td>
 	</tr>
 	{foreach from=$limits key=k item=v}
-	<tr class={if $k == $limid}repo1{else}portf1{/if} id=rw[{$k}]>
+	<tr class={if $k == $limid}repo1{else}portf1{/if} id=rw[{$v@index}]>
 	<td{if $k == $limid} id=tdact{/if}>{$k}</td>
-	<td class=nowrp><a href='./lim_set.php?limid={$k}'>{$v.Name}</a><input type=hidden id="ftxt[{$k}]" value='{$v.Name}'></td>
+	<td class=nowrp><a href='./lim_set.php?limid={$k}'>{$v.Name}</a><input type=hidden id="ftxt[{$v@index}]" value='{$v.Name}'></td>
 	</tr>
 	{/foreach}
 	</table>
 	</div>
-
 </td>
 
 <td style='width: 400px; vertical-align: top;'>

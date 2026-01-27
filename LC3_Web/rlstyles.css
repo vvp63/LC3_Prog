@@ -20,6 +20,10 @@ select.clnts {width: 400px;}
 .butt_delch {font-size: 18px; padding: 5px; background-color: #FFE0E0; border: 1px solid #F0C0C0; font-color: #901010; cursor: pointer;}
 .butt_edit {width: 32px; height: 32px;  border: 1px solid #C0C0F0; background-image: url('img/edit.png'); cursor: pointer;}
 .butt_del{width: 32px; height: 32px;  border: 1px solid #C0C0F0; background-image: url('img/del.png'); cursor: pointer;}
+.butt_copy{width: 24px; height: 24px;  border: 1px solid #FFFFFF; background-image: url('img/copy.png'); cursor: pointer;}
+.butt_up{width: 21px; height: 21px;  border: 1px solid #C0C0F0; background-image: url('img/up.png'); cursor: pointer;}
+.butt_down{width: 21px; height: 21px;  border: 1px solid #C0C0F0; background-image: url('img/down.png'); cursor: pointer;}
+
 .vis {display: inline;}
 .unvis {display: none;}
 b.nobuy {background-color: #FFB0B0;}

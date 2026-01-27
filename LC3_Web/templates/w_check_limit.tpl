@@ -1,17 +1,18 @@
 {include file="header.tpl"}
 
-<b class=limcl >Лимит {$limits.$limitid.Name}. Клиент {$clients.$clientid.fullname}.<br><br></b>
-
+<b class=limcl >Лимит {$limits.$limitid.Name}. Клиент {$clients.$clientid.fullname}.<br></b>
+<input type=button value="" class=butt_copy title="Copy to clipboard" onclick='copyTable2("ResTable")'><br>
 <div style="display: inline-block; height: 88%; width: 100%; overflow-y: auto;">
 
 {assign var="maxfl" value="0"}
 {assign var="maxlv" value="0"}
-<table class=checkres>
+
+<table class=checkres id=ResTable>
 <tr>
 {foreach from=$check_res_h key=kh item=vh}{if not $vh|in_array:$fh}
 <td class=checktop><nobr>{$vh}
 {if $vh|in_array:$sra}
-<a target=_self class=updown href="w_check_limit.php?clientid={$clientid}&limitid={$limitid}&sort={$vh}">|{if {$smarty.session.sort == $vh} && ($smarty.session.desc == 1) }&or;{else}&and;{/if}|</a>
+<input type=button onclick="toHref('w_check_limit.php?clientid={$clientid}&limitid={$limitid}&sort={$vh}')" class={if {$smarty.session.sort == $vh} && ($smarty.session.desc == 1) }butt_down{else}butt_up{/if}>
 {/if}</nobr></td>{/if}{/foreach}
 <td class=checktop>&nbsp;</td>
 </tr>
